@@ -1,4 +1,4 @@
-# BorderBridge
+# BeyondBorders
 
 > **Rebuilding identity for displaced people — one verified signal at a time.**
 
