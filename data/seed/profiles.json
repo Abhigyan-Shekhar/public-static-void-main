@@ -1,0 +1,26 @@
+[
+  {
+    "id": "a1000000-0000-0000-0000-000000000001",
+    "email": "officer@borderbridge.demo",
+    "role": "authority",
+    "internal_role": "case_manager",
+    "full_name": "Sarah Chen",
+    "created_at": "2026-03-13T08:00:00+00:00"
+  },
+  {
+    "id": "a1000000-0000-0000-0000-000000000002",
+    "email": "ahmad@borderbridge.demo",
+    "role": "refugee",
+    "internal_role": null,
+    "full_name": "Ahmad Karimi",
+    "created_at": "2026-03-13T08:05:00+00:00"
+  },
+  {
+    "id": "a1000000-0000-0000-0000-000000000003",
+    "email": "refuwork@borderbridge.demo",
+    "role": "partner",
+    "internal_role": "partner_service_officer",
+    "full_name": "RefuWork Agency",
+    "created_at": "2026-03-13T08:10:00+00:00"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "id": "p1000000-0000-0000-0000-000000000001",
+    "primary_name": "Ahmad Karimi",
+    "alt_names": [],
+    "dob": "1985-03-15",
+    "sex": "male",
+    "nationality": "Syrian",
+    "primary_language": "Arabic",
+    "created_at": "2026-03-13T08:15:00+00:00",
+    "created_by": "a1000000-0000-0000-0000-000000000001"
+  },
+  {
+    "id": "p1000000-0000-0000-0000-000000000002",
+    "primary_name": "Fatima Karimi",
+    "alt_names": [],
+    "dob": "1988-07-22",
+    "sex": "female",
+    "nationality": "Syrian",
+    "primary_language": "Arabic",
+    "created_at": "2026-03-13T08:20:00+00:00",
+    "created_by": "a1000000-0000-0000-0000-000000000001"
+  },
+  {
+    "id": "p1000000-0000-0000-0000-000000000003",
+    "primary_name": "Omar Hassan",
+    "alt_names": [],
+    "dob": "1990-11-03",
+    "sex": "male",
+    "nationality": "Iraqi",
+    "primary_language": "Arabic",
+    "created_at": "2026-03-13T08:25:00+00:00",
+    "created_by": "a1000000-0000-0000-0000-000000000001"
+  }
+]

@@ -191,7 +191,7 @@ const TitleSection = ({ open }: { open: boolean }) => {
               <div className="flex items-center gap-2">
                 <div>
                   <span className="block text-sm font-semibold text-gray-900 dark:text-gray-100">
-                    BorderBridge
+                    Beyond Borders
                   </span>
                   <span className="block text-xs text-gray-500 dark:text-gray-400">
                     Authority Dashboard
@@ -265,6 +265,38 @@ interface RegistrationContentProps {
 }
 
 const RegistrationContent = ({ isDark, setIsDark }: RegistrationContentProps) => {
+  const [fullName, setFullName] = useState("");
+  const [intakeLocation, setIntakeLocation] = useState("");
+  const [agency, setAgency] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [result, setResult] = useState<{ ok: boolean; message: string } | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!fullName.trim()) return;
+    setSubmitting(true);
+    setResult(null);
+    try {
+      const { createCase } = await import("../../lib/api");
+      const created = await createCase({
+        person: {
+          name: fullName.trim(),
+        },
+        status: "intake_created",
+        intake_location: intakeLocation || undefined,
+        owner_agency: agency || undefined,
+      });
+      setResult({ ok: true, message: `Case created: ${(created as any).case_code ?? (created as any).id}` });
+      setFullName("");
+      setIntakeLocation("");
+      setAgency("");
+    } catch (err: any) {
+      setResult({ ok: false, message: err.message ?? "Failed to create case." });
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <div className="relative flex-1 overflow-auto bg-gray-50 dark:bg-gray-950 p-6">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -288,54 +320,54 @@ const RegistrationContent = ({ isDark, setIsDark }: RegistrationContentProps) =>
             onClick={() => setIsDark(!isDark)}
             className="flex h-10 w-10 items-center justify-center rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
           >
-            {isDark ? (
-               <Sun className="h-4 w-4" />
-            ) : (
-               <Moon className="h-4 w-4" />
-            )}
+            {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
           <Link to="/" className="p-2 rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
             <User className="h-5 w-5" />
           </Link>
         </div>
       </div>
-      
+
+      {/* Result banner */}
+      {result && (
+        <div className={`relative z-10 mb-4 px-4 py-3 rounded-lg text-sm font-medium ${result.ok ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200'}`}>
+          {result.message}
+        </div>
+      )}
+
       {/* Registration Form Card */}
       <div className="relative z-10 max-w-4xl rounded-xl border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900">
         <div className="p-6 border-b border-gray-200 dark:border-gray-800">
           <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Profile Details</h2>
           <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Please enter the individual's primary details.</p>
         </div>
-        
-        <form className="p-6">
+
+        <form className="p-6" onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
              <div className="space-y-4">
                <div>
                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                   Full Name
+                   Full Name <span className="text-red-500">*</span>
                  </label>
-                 <input 
-                   type="text" 
-                   className="w-full px-3 py-2 bg-transparent border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-gray-900 dark:text-white transition-colors"
-                 />
-               </div>
-               
-               <div>
-                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                   Nationality
-                 </label>
-                 <input 
-                   type="text" 
+                 <input
+                   type="text"
+                   required
+                   value={fullName}
+                   onChange={e => setFullName(e.target.value)}
+                   placeholder="e.g. Ahmad Karimi"
                    className="w-full px-3 py-2 bg-transparent border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-gray-900 dark:text-white transition-colors"
                  />
                </div>
 
                <div>
                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                   Primary Language
+                   Intake Location
                  </label>
-                 <input 
-                   type="text" 
+                 <input
+                   type="text"
+                   value={intakeLocation}
+                   onChange={e => setIntakeLocation(e.target.value)}
+                   placeholder="e.g. Camp Delta"
                    className="w-full px-3 py-2 bg-transparent border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-gray-900 dark:text-white transition-colors"
                  />
                </div>
@@ -344,30 +376,13 @@ const RegistrationContent = ({ isDark, setIsDark }: RegistrationContentProps) =>
              <div className="space-y-4">
                <div>
                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                   Date of Birth
+                   Owner Agency
                  </label>
-                 <input 
-                   type="date" 
-                   className="w-full px-3 py-2 bg-transparent border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-gray-900 dark:text-white transition-colors [color-scheme:light] dark:[color-scheme:dark]"
-                 />
-               </div>
-               
-               <div>
-                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                   Email Address
-                 </label>
-                 <input 
-                   type="email" 
-                   className="w-full px-3 py-2 bg-transparent border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-gray-900 dark:text-white transition-colors"
-                 />
-               </div>
-
-               <div>
-                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                   Phone Number
-                 </label>
-                 <input 
-                   type="tel" 
+                 <input
+                   type="text"
+                   value={agency}
+                   onChange={e => setAgency(e.target.value)}
+                   placeholder="e.g. UNHCR"
                    className="w-full px-3 py-2 bg-transparent border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-gray-900 dark:text-white transition-colors"
                  />
                </div>
@@ -375,11 +390,12 @@ const RegistrationContent = ({ isDark, setIsDark }: RegistrationContentProps) =>
           </div>
 
           <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-800 flex justify-end">
-            <GradientButton 
-              type="button"
+            <GradientButton
+              type="submit"
               className="px-6 py-2.5 rounded-lg"
+              disabled={submitting || !fullName.trim()}
             >
-              Save Details
+              {submitting ? "Creating…" : "Register Client"}
             </GradientButton>
           </div>
         </form>

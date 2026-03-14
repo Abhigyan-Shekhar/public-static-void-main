@@ -1,0 +1,24 @@
+[
+  {
+    "id": "an1000000-0000-0000-0000-000000000001",
+    "announcement_type": "appointment_reminder",
+    "title": "Interview Scheduled",
+    "body": "Identity review interview on 15 March 2026 at 10:00 AM, Room 204.",
+    "target_case_id": "c1000000-0000-0000-0000-000000000001",
+    "target_location": null,
+    "target_status": null,
+    "posted_by": "a1000000-0000-0000-0000-000000000001",
+    "created_at": "2026-03-13T08:45:00+00:00"
+  },
+  {
+    "id": "an1000000-0000-0000-0000-000000000002",
+    "announcement_type": "food_shelter_medical",
+    "title": "Food Distribution - Zone B",
+    "body": "Food packages available at Distribution Point B, Tue/Thu 08:00-12:00.",
+    "target_case_id": null,
+    "target_location": null,
+    "target_status": null,
+    "posted_by": "a1000000-0000-0000-0000-000000000001",
+    "created_at": "2026-03-13T08:46:00+00:00"
+  }
+]

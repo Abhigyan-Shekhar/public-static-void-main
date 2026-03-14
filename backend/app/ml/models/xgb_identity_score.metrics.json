@@ -1,0 +1,7 @@
+{
+  "r2": 0.9741,
+  "mae": 3.0305,
+  "rmse": 3.8285,
+  "model_type": "xgboost",
+  "n_samples": 3000
+}

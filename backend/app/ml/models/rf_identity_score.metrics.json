@@ -1,0 +1,7 @@
+{
+  "r2": 0.9553,
+  "mae": 3.8789,
+  "rmse": 5.0334,
+  "model_type": "random_forest",
+  "n_samples": 3000
+}

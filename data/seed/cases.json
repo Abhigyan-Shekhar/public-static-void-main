@@ -1,0 +1,645 @@
+[
+  {
+    "case_id": "c1000000-0000-0000-0000-000000000001",
+    "case_code": "BB-1001",
+    "status": "provisional_identity",
+    "person": {
+      "name": "Ahmad Karimi",
+      "nationality": "Syrian",
+      "language": "Arabic",
+      "date_of_birth": "1985-03-15"
+    },
+    "created_by": "a1000000-0000-0000-0000-000000000001",
+    "created_at": "2026-03-13T08:15:00+00:00",
+    "updated_at": "2026-03-13T08:15:00+00:00"
+  },
+  {
+    "case_id": "c1000000-0000-0000-0000-000000000002",
+    "case_code": "BB-1002",
+    "status": "intake",
+    "person": {
+      "name": "Fatima Karimi",
+      "nationality": "Syrian",
+      "language": "Arabic",
+      "date_of_birth": "1988-07-22"
+    },
+    "created_by": "a1000000-0000-0000-0000-000000000001",
+    "created_at": "2026-03-13T08:20:00+00:00",
+    "updated_at": "2026-03-13T08:20:00+00:00"
+  },
+  {
+    "case_id": "c1000000-0000-0000-0000-000000000003",
+    "case_code": "BB-1003",
+    "status": "under_review",
+    "person": {
+      "name": "Omar Hassan",
+      "nationality": "Iraqi",
+      "language": "Arabic",
+      "date_of_birth": "1990-11-03"
+    },
+    "created_by": "a1000000-0000-0000-0000-000000000001",
+    "created_at": "2026-03-13T08:25:00+00:00",
+    "updated_at": "2026-03-13T08:25:00+00:00"
+  },
+  {
+    "case_id": "64d3fc16-f2fd-460f-bdf4-0656b531f2df",
+    "case_code": "BB-1004",
+    "status": "intake_created",
+    "person": {
+      "name": "Ahmad Karimi",
+      "nationality": "Syrian",
+      "language": "Arabic",
+      "date_of_birth": "1985-03-15"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T17:59:52.198048+00:00",
+    "updated_at": "2026-03-13T17:59:52.198058+00:00"
+  },
+  {
+    "case_id": "90709646-cbb2-4003-b26d-b02f5edf088c",
+    "case_code": "BB-1005",
+    "status": "intake_created",
+    "person": {
+      "name": "Ahmad Karimi",
+      "nationality": "Syrian",
+      "language": "Arabic",
+      "date_of_birth": "1985-03-15"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:01:44.549362+00:00",
+    "updated_at": "2026-03-13T18:01:44.549372+00:00"
+  },
+  {
+    "case_id": "30ba6547-4658-4eac-85f1-f323c4a9f5eb",
+    "case_code": "BB-1006",
+    "status": "intake_created",
+    "person": {
+      "name": "Ahmad Karimi",
+      "nationality": "Syrian",
+      "language": "Arabic",
+      "date_of_birth": "1985-03-15"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:02:42.440206+00:00",
+    "updated_at": "2026-03-13T18:02:42.440218+00:00"
+  },
+  {
+    "case_id": "b79deaa4-7a55-47de-bf9c-09fafa851e0f",
+    "case_code": "BB-1007",
+    "status": "intake_created",
+    "person": {
+      "name": "Ahmad Karimi",
+      "nationality": "Syrian",
+      "language": "Arabic",
+      "date_of_birth": "1985-03-15"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:02:58.191363+00:00",
+    "updated_at": "2026-03-13T18:02:58.191374+00:00"
+  },
+  {
+    "case_id": "7e3bb6a1-5c21-4bb0-a3c2-971eed2eb0f2",
+    "case_code": "BB-1008",
+    "status": "intake_created",
+    "person": {
+      "name": "Ahmad Karimi",
+      "nationality": "Syrian",
+      "language": "Arabic",
+      "date_of_birth": "1985-03-15"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:06:02.040133+00:00",
+    "updated_at": "2026-03-13T18:06:02.040143+00:00"
+  },
+  {
+    "case_id": "0670c42a-0d44-4e41-9534-b7cf7b0894ba",
+    "case_code": "BB-1009",
+    "status": "evidence_pending",
+    "person": {
+      "name": "Ahmad Karimi",
+      "nationality": "Syrian",
+      "language": "Arabic",
+      "date_of_birth": "1985-03-15"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:09:13.617403+00:00",
+    "updated_at": "2026-03-13T18:12:41.987561+00:00"
+  },
+  {
+    "case_id": "b3dcdda7-db00-40d0-ae8f-47f8cebf9f6b",
+    "case_code": "BB-1010",
+    "status": "evidence_pending",
+    "person": {
+      "name": "Ahmad Karimi",
+      "nationality": "Syrian",
+      "language": "Arabic",
+      "date_of_birth": "1985-03-15"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:18:21.004219+00:00",
+    "updated_at": "2026-03-13T18:18:21.028728+00:00"
+  },
+  {
+    "case_id": "ec52062e-eb2c-4384-8691-bfa432bd830a",
+    "case_code": "BB-1011",
+    "status": "evidence_pending",
+    "person": {
+      "name": "Ahmad Karimi",
+      "nationality": "Syrian",
+      "language": "Arabic",
+      "date_of_birth": "1985-03-15"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:18:47.178536+00:00",
+    "updated_at": "2026-03-13T18:18:47.204705+00:00"
+  },
+  {
+    "case_id": "226c3260-47fe-4e84-9539-ede9a5ca50d9",
+    "case_code": "BB-1012",
+    "status": "intake_created",
+    "person": {
+      "name": "Test"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:20:25.110600+00:00",
+    "updated_at": "2026-03-13T18:20:25.110612+00:00"
+  },
+  {
+    "case_id": "4d39def3-04df-41d6-aaaa-c9f5c92bd2cf",
+    "case_code": "BB-1013",
+    "status": "intake_created",
+    "person": {
+      "person_id": "person-score-test"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:54:06.342346+00:00",
+    "updated_at": "2026-03-13T18:54:06.342356+00:00"
+  },
+  {
+    "case_id": "11a5fbe5-cc29-46ef-9cd6-16fba3888f22",
+    "case_code": "BB-1014",
+    "status": "intake_created",
+    "person": {
+      "person_id": "person-score-e2e"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:54:06.512664+00:00",
+    "updated_at": "2026-03-13T18:54:06.512677+00:00"
+  },
+  {
+    "id": "6a846e09-8d7f-4954-986f-0e764be2f584",
+    "case_id": "6a846e09-8d7f-4954-986f-0e764be2f584",
+    "case_code": "BB-1015",
+    "status": "intake_created",
+    "person": {
+      "person_id": "person-score-test"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:55:02.343113+00:00",
+    "updated_at": "2026-03-13T18:55:02.343129+00:00"
+  },
+  {
+    "id": "ae2df3fb-a23e-4309-b670-ac4d18626a76",
+    "case_id": "ae2df3fb-a23e-4309-b670-ac4d18626a76",
+    "case_code": "BB-1016",
+    "status": "evidence_pending",
+    "person": {
+      "person_id": "person-score-e2e"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:55:02.356855+00:00",
+    "updated_at": "2026-03-13T18:55:02.374659+00:00"
+  },
+  {
+    "id": "e7902d9e-7eb9-4cd2-ae37-8b5135e33a66",
+    "case_id": "e7902d9e-7eb9-4cd2-ae37-8b5135e33a66",
+    "case_code": "BB-1017",
+    "status": "evidence_pending",
+    "person": {
+      "person_id": "person-score-e2e"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:55:43.945848+00:00",
+    "updated_at": "2026-03-13T18:55:43.975220+00:00"
+  },
+  {
+    "id": "18a4928e-3371-4d32-82ee-d595fd14fd71",
+    "case_id": "18a4928e-3371-4d32-82ee-d595fd14fd71",
+    "case_code": "BB-1018",
+    "status": "intake_created",
+    "person": {
+      "person_id": "person-score-test"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:56:18.525320+00:00",
+    "updated_at": "2026-03-13T18:56:18.525329+00:00"
+  },
+  {
+    "id": "1290785c-1cbe-4a57-a244-2262d35905c8",
+    "case_id": "1290785c-1cbe-4a57-a244-2262d35905c8",
+    "case_code": "BB-1019",
+    "status": "evidence_pending",
+    "person": {
+      "person_id": "person-score-e2e"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:56:20.701524+00:00",
+    "updated_at": "2026-03-13T18:56:20.722277+00:00"
+  },
+  {
+    "id": "7389aaf0-3fb9-48c4-bcf5-20a61a2206de",
+    "case_id": "7389aaf0-3fb9-48c4-bcf5-20a61a2206de",
+    "case_code": "BB-1020",
+    "status": "intake_created",
+    "person": {
+      "person_id": "person-score-test"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:57:06.779239+00:00",
+    "updated_at": "2026-03-13T18:57:06.779250+00:00"
+  },
+  {
+    "id": "9c9e7cb1-7eb2-41c1-9ef4-e02e5152dd3c",
+    "case_id": "9c9e7cb1-7eb2-41c1-9ef4-e02e5152dd3c",
+    "case_code": "BB-1021",
+    "status": "evidence_pending",
+    "person": {
+      "person_id": "person-score-e2e"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:57:06.796877+00:00",
+    "updated_at": "2026-03-13T18:57:06.814737+00:00"
+  },
+  {
+    "id": "0d9abf81-0f89-4548-a847-3861acdde880",
+    "case_id": "0d9abf81-0f89-4548-a847-3861acdde880",
+    "case_code": "BB-1022",
+    "status": "intake_created",
+    "person": {
+      "person_id": "person-score-test"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:57:19.404951+00:00",
+    "updated_at": "2026-03-13T18:57:19.404962+00:00"
+  },
+  {
+    "id": "29709e71-607d-4e7c-8ade-3c92691fd0f9",
+    "case_id": "29709e71-607d-4e7c-8ade-3c92691fd0f9",
+    "case_code": "BB-1023",
+    "status": "evidence_pending",
+    "person": {
+      "person_id": "person-score-e2e"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:57:19.420457+00:00",
+    "updated_at": "2026-03-13T18:57:19.438576+00:00"
+  },
+  {
+    "id": "031b7d3f-45e1-4f54-a05b-9645bcc15bec",
+    "case_id": "031b7d3f-45e1-4f54-a05b-9645bcc15bec",
+    "case_code": "BB-1024",
+    "status": "intake_created",
+    "person": {
+      "person_id": "person-score-test"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:57:30.471477+00:00",
+    "updated_at": "2026-03-13T18:57:30.471487+00:00"
+  },
+  {
+    "id": "80a4923e-b20a-4288-aa4a-b80e404df590",
+    "case_id": "80a4923e-b20a-4288-aa4a-b80e404df590",
+    "case_code": "BB-1025",
+    "status": "evidence_pending",
+    "person": {
+      "person_id": "person-score-e2e"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:57:30.487601+00:00",
+    "updated_at": "2026-03-13T18:57:30.506550+00:00"
+  },
+  {
+    "id": "612d5cce-4df1-4776-87fe-6ada71e6ba23",
+    "case_id": "612d5cce-4df1-4776-87fe-6ada71e6ba23",
+    "case_code": "BB-1026",
+    "status": "intake_created",
+    "person": {
+      "person_id": "person-score-test"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:57:41.051245+00:00",
+    "updated_at": "2026-03-13T18:57:41.051255+00:00"
+  },
+  {
+    "id": "8fec771c-b739-4a07-b1e4-9c6d10fa202d",
+    "case_id": "8fec771c-b739-4a07-b1e4-9c6d10fa202d",
+    "case_code": "BB-1027",
+    "status": "evidence_pending",
+    "person": {
+      "person_id": "person-score-e2e"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:57:41.067113+00:00",
+    "updated_at": "2026-03-13T18:57:41.085178+00:00"
+  },
+  {
+    "id": "6772705e-fbef-43e3-8d27-89833719322f",
+    "case_id": "6772705e-fbef-43e3-8d27-89833719322f",
+    "case_code": "BB-1028",
+    "status": "intake_created",
+    "person": {
+      "person_id": "person-score-test"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:57:51.631475+00:00",
+    "updated_at": "2026-03-13T18:57:51.631485+00:00"
+  },
+  {
+    "id": "15463a2a-9e0e-4a61-8372-4bed7ea463b2",
+    "case_id": "15463a2a-9e0e-4a61-8372-4bed7ea463b2",
+    "case_code": "BB-1029",
+    "status": "evidence_pending",
+    "person": {
+      "person_id": "person-score-e2e"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:57:51.647213+00:00",
+    "updated_at": "2026-03-13T18:57:51.665522+00:00"
+  },
+  {
+    "id": "5adbf7bd-8c70-4242-801a-e258d3ee53ef",
+    "case_id": "5adbf7bd-8c70-4242-801a-e258d3ee53ef",
+    "case_code": "BB-1030",
+    "status": "intake_created",
+    "person": {
+      "person_id": "person-score-test"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:59:05.961484+00:00",
+    "updated_at": "2026-03-13T18:59:05.961494+00:00"
+  },
+  {
+    "id": "0efe0b95-c36b-48d1-ab7f-2b5ee1772fb7",
+    "case_id": "0efe0b95-c36b-48d1-ab7f-2b5ee1772fb7",
+    "case_code": "BB-1031",
+    "status": "evidence_pending",
+    "person": {
+      "person_id": "person-score-e2e"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:59:05.980088+00:00",
+    "updated_at": "2026-03-13T18:59:06.000405+00:00"
+  },
+  {
+    "id": "8713fc37-dd1a-46c6-a3d6-158895f5dabc",
+    "case_id": "8713fc37-dd1a-46c6-a3d6-158895f5dabc",
+    "case_code": "BB-1032",
+    "status": "intake_created",
+    "person": {
+      "person_id": "person-score-test"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:59:29.340226+00:00",
+    "updated_at": "2026-03-13T18:59:29.340236+00:00"
+  },
+  {
+    "id": "919669cf-def8-4387-9097-2120ab85c43c",
+    "case_id": "919669cf-def8-4387-9097-2120ab85c43c",
+    "case_code": "BB-1033",
+    "status": "evidence_pending",
+    "person": {
+      "person_id": "person-score-e2e"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T18:59:29.356421+00:00",
+    "updated_at": "2026-03-13T18:59:29.376632+00:00"
+  },
+  {
+    "id": "5d8d4ef1-a231-4db0-aa56-59afa4ebef58",
+    "case_id": "5d8d4ef1-a231-4db0-aa56-59afa4ebef58",
+    "case_code": "BB-1034",
+    "status": "evidence_pending",
+    "person": {
+      "person_id": "demo-001"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T19:03:16.901852+00:00",
+    "updated_at": "2026-03-13T19:03:16.922869+00:00"
+  },
+  {
+    "id": "6949c59e-5e1f-4275-9125-bd2b1016135c",
+    "case_id": "6949c59e-5e1f-4275-9125-bd2b1016135c",
+    "case_code": "BB-1035",
+    "status": "evidence_pending",
+    "person": {
+      "person_id": "demo-001"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T19:03:33.882879+00:00",
+    "updated_at": "2026-03-13T19:03:33.900713+00:00"
+  },
+  {
+    "id": "9e642c73-a304-400d-9b09-97a11605a602",
+    "case_id": "9e642c73-a304-400d-9b09-97a11605a602",
+    "case_code": "BB-1036",
+    "status": "intake_created",
+    "person": {
+      "person_id": "person-score-test"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T19:08:48.501573+00:00",
+    "updated_at": "2026-03-13T19:08:48.501589+00:00"
+  },
+  {
+    "id": "a852d91f-2c13-4300-9034-1fdef89421e4",
+    "case_id": "a852d91f-2c13-4300-9034-1fdef89421e4",
+    "case_code": "BB-1037",
+    "status": "evidence_pending",
+    "person": {
+      "person_id": "person-score-e2e"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T19:08:48.684913+00:00",
+    "updated_at": "2026-03-13T19:08:48.713486+00:00"
+  },
+  {
+    "id": "9bdb548f-24a8-4413-84bc-5e1b5c8f8cd8",
+    "case_id": "9bdb548f-24a8-4413-84bc-5e1b5c8f8cd8",
+    "case_code": "BB-1038",
+    "status": "intake_created",
+    "person": {
+      "person_id": "person-score-test"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T19:09:25.389613+00:00",
+    "updated_at": "2026-03-13T19:09:25.389624+00:00"
+  },
+  {
+    "id": "39ffc578-a70d-4368-9d9b-8056b137094b",
+    "case_id": "39ffc578-a70d-4368-9d9b-8056b137094b",
+    "case_code": "BB-1039",
+    "status": "evidence_pending",
+    "person": {
+      "person_id": "person-score-e2e"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T19:09:25.406689+00:00",
+    "updated_at": "2026-03-13T19:09:25.427020+00:00"
+  },
+  {
+    "id": "8753cb2e-7a88-4145-98ce-5a44afcc0610",
+    "case_id": "8753cb2e-7a88-4145-98ce-5a44afcc0610",
+    "case_code": "BB-1040",
+    "status": "intake_created",
+    "person": {
+      "person_id": "person-score-test"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T19:52:43.282173+00:00",
+    "updated_at": "2026-03-13T19:52:43.282183+00:00"
+  },
+  {
+    "id": "3914f7d1-2631-4378-ac8e-99b86d3aed0b",
+    "case_id": "3914f7d1-2631-4378-ac8e-99b86d3aed0b",
+    "case_code": "BB-1041",
+    "status": "evidence_pending",
+    "person": {
+      "person_id": "person-score-e2e"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T19:52:43.302457+00:00",
+    "updated_at": "2026-03-13T19:52:43.336245+00:00"
+  },
+  {
+    "id": "ae25df21-38de-4786-b6fa-9a2e7eb5bda4",
+    "case_id": "ae25df21-38de-4786-b6fa-9a2e7eb5bda4",
+    "case_code": "BB-1042",
+    "status": "intake_created",
+    "person": {
+      "person_id": "person-score-test"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T21:06:09.499083+00:00",
+    "updated_at": "2026-03-13T21:06:09.499093+00:00"
+  },
+  {
+    "id": "edeb5bb5-e051-43aa-a8db-5d2b8d273a81",
+    "case_id": "edeb5bb5-e051-43aa-a8db-5d2b8d273a81",
+    "case_code": "BB-1043",
+    "status": "evidence_pending",
+    "person": {
+      "person_id": "person-score-e2e"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T21:06:09.516001+00:00",
+    "updated_at": "2026-03-13T21:06:09.529303+00:00"
+  },
+  {
+    "id": "7403dbdb-70ba-4c82-b7aa-d2e4f3b6c8a1",
+    "case_id": "7403dbdb-70ba-4c82-b7aa-d2e4f3b6c8a1",
+    "case_code": "BB-1044",
+    "status": "evidence_pending",
+    "person": {
+      "person_id": "fatima-demo"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-13T21:40:02.238513+00:00",
+    "updated_at": "2026-03-13T21:44:05.860494+00:00"
+  },
+  {
+    "id": "5210bdfa-d365-4244-b926-35445fcb5e80",
+    "case_id": "5210bdfa-d365-4244-b926-35445fcb5e80",
+    "case_code": "BB-1045",
+    "status": "intake_created",
+    "person": {
+      "person_id": "person-score-test"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-14T04:51:17.982992+00:00",
+    "updated_at": "2026-03-14T04:51:17.983012+00:00"
+  },
+  {
+    "id": "2cafe265-380e-4379-bf95-0b8dac0d6375",
+    "case_id": "2cafe265-380e-4379-bf95-0b8dac0d6375",
+    "case_code": "BB-1046",
+    "status": "evidence_pending",
+    "person": {
+      "person_id": "person-score-e2e"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-14T04:51:18.053476+00:00",
+    "updated_at": "2026-03-14T04:51:18.124916+00:00"
+  },
+  {
+    "id": "127518ed-fd2b-4263-acfb-34dc9d2ac7f2",
+    "case_id": "127518ed-fd2b-4263-acfb-34dc9d2ac7f2",
+    "case_code": "BB-1047",
+    "status": "intake_created",
+    "person": {
+      "person_id": "person-score-test"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-14T04:52:57.016429+00:00",
+    "updated_at": "2026-03-14T04:52:57.016449+00:00"
+  },
+  {
+    "id": "5b7ecb25-27bf-435e-a4d2-388041f2f816",
+    "case_id": "5b7ecb25-27bf-435e-a4d2-388041f2f816",
+    "case_code": "BB-1048",
+    "status": "evidence_pending",
+    "person": {
+      "person_id": "person-score-e2e"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-14T04:52:57.085821+00:00",
+    "updated_at": "2026-03-14T04:52:57.122183+00:00"
+  },
+  {
+    "id": "f514a120-0142-45d1-afdf-e7614edb38d7",
+    "case_id": "f514a120-0142-45d1-afdf-e7614edb38d7",
+    "case_code": "BB-1049",
+    "status": "intake_created",
+    "person": {
+      "person_id": "person-score-test"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-14T04:58:49.580412+00:00",
+    "updated_at": "2026-03-14T04:58:49.580426+00:00"
+  },
+  {
+    "id": "53e3afba-4c6b-4676-98e2-734c82c67a6d",
+    "case_id": "53e3afba-4c6b-4676-98e2-734c82c67a6d",
+    "case_code": "BB-1050",
+    "status": "evidence_pending",
+    "person": {
+      "person_id": "person-score-e2e"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-14T04:58:49.649351+00:00",
+    "updated_at": "2026-03-14T04:58:49.689985+00:00"
+  },
+  {
+    "id": "185da1f4-6e82-4663-832e-4ace33ad6399",
+    "case_id": "185da1f4-6e82-4663-832e-4ace33ad6399",
+    "case_code": "BB-1051",
+    "status": "intake_created",
+    "person": {
+      "person_id": "person-score-test"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-14T05:18:40.576713+00:00",
+    "updated_at": "2026-03-14T05:18:40.576734+00:00"
+  },
+  {
+    "id": "a537a584-0a19-43ad-ad12-6dc3998c03d2",
+    "case_id": "a537a584-0a19-43ad-ad12-6dc3998c03d2",
+    "case_code": "BB-1052",
+    "status": "evidence_pending",
+    "person": {
+      "person_id": "person-score-e2e"
+    },
+    "created_by": "auth_manager_1",
+    "created_at": "2026-03-14T05:18:40.699336+00:00",
+    "updated_at": "2026-03-14T05:18:40.777167+00:00"
+  }
+]

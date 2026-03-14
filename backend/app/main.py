@@ -1,32 +1,45 @@
-"""
-BorderBridge — FastAPI application entry point.
-"""
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.api.routes import (
+    auth,
+    cases,
+    evidence,
+    family_links,
+    documents,
+    scoring,
+    announcements,
+    referrals,
+)
 from app.core.config import settings
-from app.api.router import api_router
 
 app = FastAPI(
-    title="BorderBridge API",
+    title="BorderBridge Backend API",
     description="Identity confidence scoring and case management for displaced populations.",
-    version="0.1.0",
+    version="1.0.0",
 )
 
-# CORS
+# CORS middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.CORS_ORIGINS,
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Mount all routes
-app.include_router(api_router)
 
-
-@app.get("/health", tags=["system"])
+@app.get("/health", tags=["Health"])
 async def health_check():
-    return {"status": "ok", "service": "borderbridge-api"}
+    return {"status": "ok"}
+
+
+# Register routers
+app.include_router(cases.router)
+app.include_router(auth.router)
+app.include_router(evidence.router)
+app.include_router(family_links.router)
+app.include_router(documents.router)
+app.include_router(scoring.router, prefix="/cases/{case_id}")
+app.include_router(announcements.router)
+app.include_router(referrals.router)

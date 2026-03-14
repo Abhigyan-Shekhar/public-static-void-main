@@ -1,8 +1,9 @@
-import { useState, useEffect, useRef } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 type EvidenceStatus = "verified" | "pending" | "rejected"
+type EvidenceRecord = Record<string, unknown>
 
 interface EvidenceNode {
   id: string
@@ -12,6 +13,11 @@ interface EvidenceNode {
   status: EvidenceStatus
   points: number
   active: boolean
+}
+
+interface EvidenceGraphProps {
+  personName?: string
+  evidence?: EvidenceRecord[]
 }
 
 const INITIAL_NODES: EvidenceNode[] = [
@@ -61,6 +67,86 @@ const INITIAL_NODES: EvidenceNode[] = [
     active: true,
   },
 ]
+
+function toTitleCase(value: string) {
+  return value
+    .replace(/[_-]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\b\w/g, (char) => char.toUpperCase())
+}
+
+function mapEvidenceType(type: string, evidenceClass: string, payloadText: string) {
+  const combined = `${type} ${evidenceClass} ${payloadText}`.toLowerCase()
+
+  if (
+    combined.includes("bio") ||
+    combined.includes("finger") ||
+    combined.includes("iris") ||
+    combined.includes("face")
+  ) {
+    return "biometric" as const
+  }
+
+  if (
+    combined.includes("family") ||
+    combined.includes("social") ||
+    combined.includes("community")
+  ) {
+    return "social" as const
+  }
+
+  if (
+    combined.includes("ngo") ||
+    combined.includes("officer") ||
+    combined.includes("interview") ||
+    combined.includes("witness")
+  ) {
+    return "human-validation" as const
+  }
+
+  return "verified-record" as const
+}
+
+function mapEvidenceStatus(state: string) {
+  if (state === "accepted" || state === "verified") {
+    return "verified" as const
+  }
+  if (state === "rejected" || state === "disputed") {
+    return "rejected" as const
+  }
+  return "pending" as const
+}
+
+function buildNodes(evidence: EvidenceRecord[]) {
+  if (!evidence.length) {
+    return INITIAL_NODES
+  }
+
+  return evidence.map((item, index) => {
+    const evidenceId = String(item.id ?? item.evidence_id ?? `evidence-${index + 1}`)
+    const evidenceType = String(item.evidence_type ?? item.type ?? "evidence")
+    const evidenceClass = String(item.evidence_class ?? item.class ?? "")
+    const source = String(item.source ?? item.provider ?? item.issuer ?? "")
+    const state = String(item.state ?? item.status ?? "pending").toLowerCase()
+    const payload = (item.payload as Record<string, unknown> | undefined) ?? {}
+    const payloadText = JSON.stringify(payload)
+    const type = mapEvidenceType(evidenceType, evidenceClass, payloadText)
+    const status = mapEvidenceStatus(state)
+    const label = toTitleCase(evidenceType)
+    const sublabel = source || toTitleCase(evidenceClass || "Linked record")
+
+    return {
+      id: evidenceId,
+      label,
+      sublabel,
+      type,
+      status,
+      points: Math.max(5, 30 - index * 3),
+      active: status === "verified",
+    } satisfies EvidenceNode
+  })
+}
 
 // ─── Colour scheme ────────────────────────────────────────────────────────────
 
@@ -140,9 +226,17 @@ function radialPosition(
 
 // ─── Main component ───────────────────────────────────────────────────────────
 
-export function EvidenceGraph() {
-  const [nodes, setNodes] = useState<EvidenceNode[]>(INITIAL_NODES)
+export function EvidenceGraph({
+  personName = "Case Subject",
+  evidence = [],
+}: EvidenceGraphProps) {
+  const baseNodes = useMemo(() => buildNodes(evidence), [evidence])
+  const [nodes, setNodes] = useState<EvidenceNode[]>(baseNodes)
   const [flash, setFlash] = useState(false)
+
+  useEffect(() => {
+    setNodes(baseNodes)
+  }, [baseNodes])
 
   const totalScore = nodes
     .filter((n) => n.active && n.status === "verified")
@@ -188,7 +282,7 @@ export function EvidenceGraph() {
             Identity Evidence Map
           </h3>
           <p className="text-xs text-gray-400 mt-0.5">
-            Click a pending node to verify it and update the confidence score
+            Live case evidence linked to the subject record
           </p>
         </div>
         {/* Legend */}
@@ -491,7 +585,7 @@ export function EvidenceGraph() {
               fontWeight="800"
               fontFamily="Inter, sans-serif"
             >
-              Ahmad Karimi
+              {personName}
             </text>
 
             {/* Score */}
@@ -532,10 +626,10 @@ export function EvidenceGraph() {
           {nodes.length} evidence sources verified
         </p>
         <button
-          onClick={() => setNodes(INITIAL_NODES)}
+          onClick={() => setNodes(baseNodes)}
           className="text-xs text-blue-500 hover:text-blue-700 font-medium transition-colors"
         >
-          Reset Demo
+          Reset View
         </button>
       </div>
     </div>

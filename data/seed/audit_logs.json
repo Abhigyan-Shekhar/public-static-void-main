@@ -1,0 +1,496 @@
+[
+  {
+    "id": "au1000000-0000-0000-0000-000000000001",
+    "action": "case_created",
+    "user_id": "a1000000-0000-0000-0000-000000000001",
+    "case_id": "c1000000-0000-0000-0000-000000000001",
+    "details": {
+      "case_code": "BB-1001"
+    },
+    "created_at": "2026-03-13T09:05:00+00:00"
+  },
+  {
+    "id": "cc855051-eb32-423d-9b3b-5039e95ee2a3",
+    "action": "add_evidence",
+    "user_id": "u1",
+    "case_id": "0670c42a-0d44-4e41-9534-b7cf7b0894ba",
+    "details": {
+      "type": "Syrian Passport",
+      "class": "official"
+    },
+    "created_at": "2026-03-13T18:12:41.986881+00:00"
+  },
+  {
+    "id": "cc45ff4f-3e49-4a5a-a099-e803ddc4033f",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "b3dcdda7-db00-40d0-ae8f-47f8cebf9f6b",
+    "details": {
+      "type": "Syrian Passport",
+      "class": "official"
+    },
+    "created_at": "2026-03-13T18:18:21.022606+00:00"
+  },
+  {
+    "id": "4db47e0f-443c-4e42-b153-02002b70c011",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "ec52062e-eb2c-4384-8691-bfa432bd830a",
+    "details": {
+      "type": "Syrian Passport",
+      "class": "official"
+    },
+    "created_at": "2026-03-13T18:18:47.197668+00:00"
+  },
+  {
+    "id": "0723c624-87c4-4b43-afbb-8cee6bc6600d",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "ae2df3fb-a23e-4309-b670-ac4d18626a76",
+    "details": {
+      "type": "government_record",
+      "class": "official"
+    },
+    "created_at": "2026-03-13T18:55:02.367611+00:00"
+  },
+  {
+    "id": "65b23be4-8560-49ef-897b-0e81bba4e45e",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "e7902d9e-7eb9-4cd2-ae37-8b5135e33a66",
+    "details": {
+      "type": "government_record",
+      "class": "official"
+    },
+    "created_at": "2026-03-13T18:55:43.965518+00:00"
+  },
+  {
+    "id": "6ecc09f6-fac6-449d-8e3d-6e13ca23fa81",
+    "action": "review_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "e7902d9e-7eb9-4cd2-ae37-8b5135e33a66",
+    "details": {
+      "new_state": "accepted"
+    },
+    "created_at": "2026-03-13T18:55:43.992506+00:00"
+  },
+  {
+    "id": "18d64ece-d672-41ea-a062-f52ef6ffc62e",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "1290785c-1cbe-4a57-a244-2262d35905c8",
+    "details": {
+      "type": "government_record",
+      "class": "official"
+    },
+    "created_at": "2026-03-13T18:56:20.714686+00:00"
+  },
+  {
+    "id": "18037b2b-cfc4-4f2b-b4c8-7228ced7639d",
+    "action": "review_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "1290785c-1cbe-4a57-a244-2262d35905c8",
+    "details": {
+      "new_state": "accepted"
+    },
+    "created_at": "2026-03-13T18:56:20.734163+00:00"
+  },
+  {
+    "id": "d47a9fbe-69c7-4c6a-99b9-38779b2a5fb9",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "9c9e7cb1-7eb2-41c1-9ef4-e02e5152dd3c",
+    "details": {
+      "type": "government_record",
+      "class": "official"
+    },
+    "created_at": "2026-03-13T18:57:06.807992+00:00"
+  },
+  {
+    "id": "f007b544-18c0-4699-81e5-c3828a8cf260",
+    "action": "review_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "9c9e7cb1-7eb2-41c1-9ef4-e02e5152dd3c",
+    "details": {
+      "new_state": "accepted"
+    },
+    "created_at": "2026-03-13T18:57:06.826107+00:00"
+  },
+  {
+    "id": "dabf946b-bc01-41de-bf0d-0ebf284342e5",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "29709e71-607d-4e7c-8ade-3c92691fd0f9",
+    "details": {
+      "type": "government_record",
+      "class": "official"
+    },
+    "created_at": "2026-03-13T18:57:19.431718+00:00"
+  },
+  {
+    "id": "7cfcf172-cbca-4c52-8d58-d9e7392b140c",
+    "action": "review_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "29709e71-607d-4e7c-8ade-3c92691fd0f9",
+    "details": {
+      "new_state": "accepted"
+    },
+    "created_at": "2026-03-13T18:57:19.450147+00:00"
+  },
+  {
+    "id": "cd3cdbfe-6b94-4fa6-9739-d51e65e9bdbb",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "80a4923e-b20a-4288-aa4a-b80e404df590",
+    "details": {
+      "type": "government_record",
+      "class": "official"
+    },
+    "created_at": "2026-03-13T18:57:30.499165+00:00"
+  },
+  {
+    "id": "436e62c8-b6b6-43ea-b14f-01a6c57f7f30",
+    "action": "review_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "80a4923e-b20a-4288-aa4a-b80e404df590",
+    "details": {
+      "new_state": "accepted"
+    },
+    "created_at": "2026-03-13T18:57:30.518172+00:00"
+  },
+  {
+    "id": "e2453288-d654-4bcd-8dc1-6e5e86cdad1b",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "8fec771c-b739-4a07-b1e4-9c6d10fa202d",
+    "details": {
+      "type": "government_record",
+      "class": "official"
+    },
+    "created_at": "2026-03-13T18:57:41.078401+00:00"
+  },
+  {
+    "id": "229b39fd-601c-41c9-8cba-876db401c4f0",
+    "action": "review_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "8fec771c-b739-4a07-b1e4-9c6d10fa202d",
+    "details": {
+      "new_state": "accepted"
+    },
+    "created_at": "2026-03-13T18:57:41.097138+00:00"
+  },
+  {
+    "id": "f544def9-03b7-4734-8c3b-56fccba43973",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "15463a2a-9e0e-4a61-8372-4bed7ea463b2",
+    "details": {
+      "type": "government_record",
+      "class": "official"
+    },
+    "created_at": "2026-03-13T18:57:51.658746+00:00"
+  },
+  {
+    "id": "16774357-c165-486c-b918-10b03f372e3b",
+    "action": "review_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "15463a2a-9e0e-4a61-8372-4bed7ea463b2",
+    "details": {
+      "new_state": "accepted"
+    },
+    "created_at": "2026-03-13T18:57:51.676889+00:00"
+  },
+  {
+    "id": "3d1a9c2e-ff88-487d-87ac-c400eb4e5b3f",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "0efe0b95-c36b-48d1-ab7f-2b5ee1772fb7",
+    "details": {
+      "type": "government_record",
+      "class": "official"
+    },
+    "created_at": "2026-03-13T18:59:05.992633+00:00"
+  },
+  {
+    "id": "d6e9578a-995f-48b8-ba64-fc8d9f00ea3c",
+    "action": "review_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "0efe0b95-c36b-48d1-ab7f-2b5ee1772fb7",
+    "details": {
+      "new_state": "accepted"
+    },
+    "created_at": "2026-03-13T18:59:06.013382+00:00"
+  },
+  {
+    "id": "d50cabb3-67da-4be3-8cb4-e863561a0ba3",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "919669cf-def8-4387-9097-2120ab85c43c",
+    "details": {
+      "type": "government_record",
+      "class": "official"
+    },
+    "created_at": "2026-03-13T18:59:29.368875+00:00"
+  },
+  {
+    "id": "d1389f56-5143-4c03-8c49-c445eed09b56",
+    "action": "review_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "919669cf-def8-4387-9097-2120ab85c43c",
+    "details": {
+      "new_state": "accepted"
+    },
+    "created_at": "2026-03-13T18:59:29.388537+00:00"
+  },
+  {
+    "id": "a0c8fb17-0d4e-4acb-afa4-4c013248ad27",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "5d8d4ef1-a231-4db0-aa56-59afa4ebef58",
+    "details": {
+      "type": "government_record",
+      "class": "official"
+    },
+    "created_at": "2026-03-13T19:03:16.914597+00:00"
+  },
+  {
+    "id": "ba8eb37c-fcc4-44f2-9c47-42f977915582",
+    "action": "review_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "5d8d4ef1-a231-4db0-aa56-59afa4ebef58",
+    "details": {
+      "new_state": "accepted"
+    },
+    "created_at": "2026-03-13T19:03:16.935440+00:00"
+  },
+  {
+    "id": "d1acb642-f85b-4377-96ad-a1002577b0f7",
+    "action": "create_referral",
+    "user_id": "auth_manager_1",
+    "case_id": "5d8d4ef1-a231-4db0-aa56-59afa4ebef58",
+    "details": {
+      "to_agency": "UNHCR Housing"
+    },
+    "created_at": "2026-03-13T19:03:16.975004+00:00"
+  },
+  {
+    "id": "012c9b1d-2850-4b10-974a-2dcf430debea",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "6949c59e-5e1f-4275-9125-bd2b1016135c",
+    "details": {
+      "type": "government_record",
+      "class": "official"
+    },
+    "created_at": "2026-03-13T19:03:33.893890+00:00"
+  },
+  {
+    "id": "89229054-df07-49f2-af11-970b6a334c97",
+    "action": "review_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "6949c59e-5e1f-4275-9125-bd2b1016135c",
+    "details": {
+      "new_state": "accepted"
+    },
+    "created_at": "2026-03-13T19:03:33.912535+00:00"
+  },
+  {
+    "id": "d2a97c3c-8032-4a14-971c-ae17be27a618",
+    "action": "create_referral",
+    "user_id": "auth_manager_1",
+    "case_id": "6949c59e-5e1f-4275-9125-bd2b1016135c",
+    "details": {
+      "to_agency": "UNHCR Housing"
+    },
+    "created_at": "2026-03-13T19:03:33.957756+00:00"
+  },
+  {
+    "id": "448097a4-e599-4388-8f4c-7d8988fe6fc4",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "a852d91f-2c13-4300-9034-1fdef89421e4",
+    "details": {
+      "type": "government_record",
+      "class": "official"
+    },
+    "created_at": "2026-03-13T19:08:48.705131+00:00"
+  },
+  {
+    "id": "454d6e7d-6886-4d31-9100-07c86038c783",
+    "action": "review_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "a852d91f-2c13-4300-9034-1fdef89421e4",
+    "details": {
+      "new_state": "accepted"
+    },
+    "created_at": "2026-03-13T19:08:48.725907+00:00"
+  },
+  {
+    "id": "13d852f4-40b1-486a-89c9-f1b4ce40255f",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "39ffc578-a70d-4368-9d9b-8056b137094b",
+    "details": {
+      "type": "government_record",
+      "class": "official"
+    },
+    "created_at": "2026-03-13T19:09:25.419190+00:00"
+  },
+  {
+    "id": "de8e3800-31b2-41d4-a1f4-d5777f4ad3f6",
+    "action": "review_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "39ffc578-a70d-4368-9d9b-8056b137094b",
+    "details": {
+      "new_state": "accepted"
+    },
+    "created_at": "2026-03-13T19:09:25.439885+00:00"
+  },
+  {
+    "id": "245283fe-9456-41d1-adce-5766b897c0f7",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "3914f7d1-2631-4378-ac8e-99b86d3aed0b",
+    "details": {
+      "type": "government_record",
+      "class": "official"
+    },
+    "created_at": "2026-03-13T19:52:43.325334+00:00"
+  },
+  {
+    "id": "0dfa01a7-bf05-456c-893c-b8c2a3a9e688",
+    "action": "review_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "3914f7d1-2631-4378-ac8e-99b86d3aed0b",
+    "details": {
+      "new_state": "accepted"
+    },
+    "created_at": "2026-03-13T19:52:43.351126+00:00"
+  },
+  {
+    "id": "2cb5312b-3a2c-43ec-a133-f3fd17fb9e29",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "edeb5bb5-e051-43aa-a8db-5d2b8d273a81",
+    "details": {
+      "type": "government_record",
+      "class": "official"
+    },
+    "created_at": "2026-03-13T21:06:09.528146+00:00"
+  },
+  {
+    "id": "45be21d5-d64c-446c-a1a4-55a549cf4640",
+    "action": "review_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "edeb5bb5-e051-43aa-a8db-5d2b8d273a81",
+    "details": {
+      "new_state": "accepted"
+    },
+    "created_at": "2026-03-13T21:06:09.541827+00:00"
+  },
+  {
+    "id": "07bfa2c3-1749-4695-ab44-3e61e4f1cff1",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "7403dbdb-70ba-4c82-b7aa-d2e4f3b6c8a1",
+    "details": {
+      "type": "passport",
+      "class": "official"
+    },
+    "created_at": "2026-03-13T21:44:05.849486+00:00"
+  },
+  {
+    "id": "f2b4e193-ef1e-4cd1-8e6c-561950ac1645",
+    "action": "review_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "7403dbdb-70ba-4c82-b7aa-d2e4f3b6c8a1",
+    "details": {
+      "new_state": "accepted"
+    },
+    "created_at": "2026-03-13T21:44:20.029666+00:00"
+  },
+  {
+    "id": "37b94106-8231-417d-bd68-1d31710eed41",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "2cafe265-380e-4379-bf95-0b8dac0d6375",
+    "details": {
+      "type": "government_record",
+      "class": "official"
+    },
+    "created_at": "2026-03-14T04:51:18.104986+00:00"
+  },
+  {
+    "id": "29c6f9da-1935-48df-badd-ad5c43f473f8",
+    "action": "review_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "2cafe265-380e-4379-bf95-0b8dac0d6375",
+    "details": {
+      "new_state": "accepted"
+    },
+    "created_at": "2026-03-14T04:51:18.150646+00:00"
+  },
+  {
+    "id": "f733c070-782d-4dfc-b76e-90766d5b2de9",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "5b7ecb25-27bf-435e-a4d2-388041f2f816",
+    "details": {
+      "type": "government_record",
+      "class": "official"
+    },
+    "created_at": "2026-03-14T04:52:57.118565+00:00"
+  },
+  {
+    "id": "a775fe02-02ce-42c5-8d5f-43b7664a9c25",
+    "action": "review_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "5b7ecb25-27bf-435e-a4d2-388041f2f816",
+    "details": {
+      "new_state": "accepted"
+    },
+    "created_at": "2026-03-14T04:52:57.153004+00:00"
+  },
+  {
+    "id": "0028c68f-0384-4063-b564-ce2d77e98032",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "53e3afba-4c6b-4676-98e2-734c82c67a6d",
+    "details": {
+      "type": "government_record",
+      "class": "official"
+    },
+    "created_at": "2026-03-14T04:58:49.685758+00:00"
+  },
+  {
+    "id": "64355430-9818-44f2-b62b-b78fdbdbaf49",
+    "action": "review_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "53e3afba-4c6b-4676-98e2-734c82c67a6d",
+    "details": {
+      "new_state": "accepted"
+    },
+    "created_at": "2026-03-14T04:58:49.723563+00:00"
+  },
+  {
+    "id": "29a37db2-5aaa-4add-8bfe-e563972fc0c7",
+    "action": "add_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "a537a584-0a19-43ad-ad12-6dc3998c03d2",
+    "details": {
+      "type": "government_record",
+      "class": "official"
+    },
+    "created_at": "2026-03-14T05:18:40.764756+00:00"
+  },
+  {
+    "id": "e0909b77-51ec-4ce9-9981-a94d57abb1c7",
+    "action": "review_evidence",
+    "user_id": "auth_manager_1",
+    "case_id": "a537a584-0a19-43ad-ad12-6dc3998c03d2",
+    "details": {
+      "new_state": "accepted"
+    },
+    "created_at": "2026-03-14T05:18:40.862394+00:00"
+  }
+]

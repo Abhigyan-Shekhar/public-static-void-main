@@ -1,24 +1,37 @@
-"""
-Application configuration — loads from environment.
-"""
+from functools import lru_cache
+from typing import Any
 
-import os
-from dotenv import load_dotenv
+from pydantic import field_validator
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
-load_dotenv()
+class Settings(BaseSettings):
+    PROJECT_NAME: str = "Beyond Borders API"
+    VERSION: str = "0.1.0"
+    
+    # Supabase (optional for demo)
+    SUPABASE_URL: str = ""
+    SUPABASE_ANON_KEY: str = ""
+    
+    # JWT / Security (mocked for demo)
+    JWT_SECRET: str = "hackathon-secret-do-not-use-in-prod"
+    
+    # Mode
+    REPO_BACKEND: str = "json" # 'json' or 'supabase'
+    DEBUG: bool = True
+    
+    CORS_ORIGINS: list[str] = ["*"]
 
+    @field_validator("CORS_ORIGINS", mode="before")
+    @classmethod
+    def parse_cors_origins(cls, value: Any) -> Any:
+        if isinstance(value, str) and value != "*":
+            return [item.strip() for item in value.split(",") if item.strip()]
+        return value
 
-class Settings:
-    SUPABASE_URL: str = os.getenv("SUPABASE_URL", "")
-    SUPABASE_KEY: str = os.getenv("SUPABASE_KEY", "")
-    SUPABASE_SERVICE_KEY: str = os.getenv("SUPABASE_SERVICE_KEY", "")
+    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
-    JWT_SECRET: str = os.getenv("JWT_SECRET", "dev-secret-change-me")
-    JWT_ALGORITHM: str = os.getenv("JWT_ALGORITHM", "HS256")
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "60"))
+@lru_cache
+def get_settings() -> Settings:
+    return Settings()
 
-    APP_ENV: str = os.getenv("APP_ENV", "development")
-    CORS_ORIGINS: list[str] = os.getenv("CORS_ORIGINS", "http://localhost:3000").split(",")
-
-
-settings = Settings()
+settings = get_settings()

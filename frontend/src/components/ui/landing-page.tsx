@@ -2,11 +2,12 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import {
   Shield, Users, ArrowRight, ChevronDown, CheckCircle2,
-  FileText, Fingerprint, Globe, Lock, BarChart2,
+  FileText, Fingerprint, Lock, BarChart2,
   ClipboardList, Clock, Bell, Building2, BookOpen,
   HeartHandshake, UserCheck, Layers, Menu, X
 } from "lucide-react"
 import { ContainerScroll } from "./container-scroll-animation"
+import { BrandLogo } from "./brand-logo"
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -51,7 +52,7 @@ const MODULES = [
   { icon: Layers, name: "Authority Dashboard", desc: "Live metrics, active cases, and alerts at a glance", to: "/dashboard" },
   { icon: ClipboardList, name: "Cases Database", desc: "Searchable case table with identity score and status", to: "/cases" },
   { icon: FileText, name: "Evidence Review", desc: "Document queue for reviewers to approve or reject", to: "/evidence" },
-  { icon: BarChart2, name: "Identity Confidence Engine", desc: "Interactive radial graph showing score breakdown", to: "/scoring" },
+  { icon: BarChart2, name: "Manual Verification", desc: "Protected verification workspace with explainable random forest support", to: "/scoring" },
   { icon: Bell, name: "Announcements Board", desc: "Targeted broadcasts to camps and groups", to: "/announcements" },
   { icon: HeartHandshake, name: "Partner Referrals", desc: "Match verified cases with NGO integration services", to: "/referrals" },
   { icon: Clock, name: "Visual Case Timeline", desc: "Milestone tracker from Arrival to Integration", to: "/timeline" },
@@ -60,28 +61,8 @@ const MODULES = [
 
 // ─── Logo ──────────────────────────────────────────────────────────────────────
 
-function Logo({ size = "md", variant = "dark" }: { size?: "sm" | "md" | "lg", variant?: "dark" | "light" }) {
-  const text = size === "lg" ? "text-2xl" : size === "sm" ? "text-sm" : "text-base"
-  const sub = size === "lg" ? "text-sm" : "text-[10px]"
-  const icon = size === "lg" ? 24 : size === "sm" ? 16 : 18
-  const nameColor = variant === "light" ? "text-white" : "text-slate-900"
-  const subColor = variant === "light" ? "text-blue-200" : "text-slate-400"
-  return (
-    <div className="flex items-center gap-2.5">
-      <div
-        className="flex items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-teal-400 shadow"
-        style={{ width: icon * 2, height: icon * 2 }}
-      >
-        <Globe size={icon} className="text-white" strokeWidth={2} />
-      </div>
-      <div>
-        <div className={`font-extrabold leading-tight ${text} ${nameColor}`}>Beyond Borders</div>
-        {size !== "sm" && (
-          <div className={`font-medium tracking-wider uppercase ${sub} ${subColor}`}>Identity Platform</div>
-        )}
-      </div>
-    </div>
-  )
+function Logo({ variant = "dark" }: { size?: "sm" | "md" | "lg", variant?: "dark" | "light" }) {
+  return <BrandLogo variant={variant} compact size="xs" />
 }
 
 // ─── Sections ─────────────────────────────────────────────────────────────────
@@ -112,7 +93,7 @@ function Navbar() {
         isLight ? "bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-20 gap-6">
         <Logo variant={isLight ? "dark" : "light"} />
 
         {/* Desktop links */}
@@ -129,7 +110,7 @@ function Navbar() {
 
         {/* Desktop actions */}
         <div className="hidden lg:flex items-center gap-2">
-          <Link to="/refugee"
+          <Link to="/login?redirect=%2Frefugee"
             className={`text-sm font-semibold border px-4 py-1.5 rounded-full transition-colors ${
               isLight
                 ? "text-blue-600 border-blue-200 bg-blue-50 hover:bg-blue-100"
@@ -143,7 +124,7 @@ function Navbar() {
             }`}>
             Login
           </Link>
-          <Link to="/dashboard"
+          <Link to="/login?redirect=%2Fdashboard"
             className={`text-sm font-bold px-4 py-1.5 rounded-full transition-colors ${
               isLight ? "bg-slate-900 text-white hover:bg-slate-700" : "bg-[#0084ff] text-white hover:bg-blue-500"
             }`}>
@@ -169,9 +150,9 @@ function Navbar() {
             </a>
           ))}
           <div className="pt-3 space-y-2 border-t border-white/10">
-            <Link to="/refugee" className="block text-center text-sm font-semibold text-white border border-white/20 px-4 py-2 rounded-lg">Track My Case</Link>
+            <Link to="/login?redirect=%2Frefugee" className="block text-center text-sm font-semibold text-white border border-white/20 px-4 py-2 rounded-lg">Track My Case</Link>
             <Link to="/login" className="block text-center text-sm font-semibold text-white/70 border border-white/10 px-4 py-2 rounded-lg">Login</Link>
-            <Link to="/dashboard" className="block text-center text-sm font-bold bg-[#0084ff] text-white px-4 py-2 rounded-lg">Get Started</Link>
+            <Link to="/login?redirect=%2Fdashboard" className="block text-center text-sm font-bold bg-[#0084ff] text-white px-4 py-2 rounded-lg">Get Started</Link>
           </div>
         </div>
       )}
@@ -203,7 +184,7 @@ function Hero() {
       </video>
 
       {/* Content */}
-      <div className="relative z-[2] min-h-screen flex flex-col justify-end pb-20">
+      <div className="relative z-[2] min-h-screen flex flex-col justify-end pb-20 pt-28">
         {/* Main content row — text left, stats right, pinned to bottom */}
         <div className="max-w-[1400px] mx-auto w-full px-6 lg:px-[60px] flex flex-col lg:flex-row justify-between items-end gap-12">
 
@@ -215,42 +196,29 @@ function Hero() {
               <span className="text-white/70 text-sm font-medium tracking-wide">Humanitarian Identity Platform</span>
             </div>
 
-            <h1
-              className="font-light leading-[1.08] mb-8 tracking-[-2px]"
-              style={{ fontSize: "clamp(48px, 6vw, 80px)" }}
-            >
-              Rebuilding identity
-              <br />
-              for{" "}
-              <span style={{
-                background: "linear-gradient(90deg, #3b9eff, #38f5c8)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}>
-                displaced people
-              </span>
-              <br />
-              — one verified signal
-              <br />
-              at a time.
-            </h1>
+            <div className="mb-8">
+              <div className="text-[clamp(56px,9vw,132px)] font-black leading-none tracking-[-4px] text-white">
+                BEYOND
+              </div>
+              <div className="text-[clamp(56px,9vw,132px)] font-black leading-none tracking-[-4px] text-white/12 [WebkitTextStroke:2px_rgba(255,255,255,0.96)] drop-shadow-[0_0_18px_rgba(255,255,255,0.22)]">
+                BORDERS
+              </div>
+            </div>
 
             <p className="text-lg leading-relaxed mb-12" style={{ color: "#b8b8b8" }}>
-              A secure humanitarian coordination platform that helps authorities,
-              NGOs, and displaced individuals move from arrival to verification
-              and integration — without repeated registrations or fragmented records.
+              A secure humanitarian coordination platform for officers, refugees, and NGOs. Protected workspaces, officer-issued refugee login, and low-cost random forest verification keep the flow auditable and privacy-aware.
             </p>
 
             <div className="flex flex-wrap gap-4 items-center mb-16">
               <Link
-                to="/dashboard"
+                to="/login?redirect=%2Fdashboard"
                 className="flex items-center gap-2.5 text-white py-3.5 px-7 rounded-md text-base font-medium transition-all duration-200 hover:translate-x-0.5"
                 style={{ background: "#0084ff" }}
               >
                 Login to Portal <ArrowRight size={18} />
               </Link>
               <Link
-                to="/refugee"
+                to="/login?redirect=%2Frefugee"
                 className="py-3.5 px-7 text-base font-medium transition-colors duration-200 hover:text-white"
                 style={{ color: "#b8b8b8", background: "transparent" }}
               >
@@ -269,9 +237,9 @@ function Hero() {
           {/* Right — stats */}
           <div className="flex gap-16 lg:gap-20 items-end pb-2 shrink-0">
             {[
-              ["40+", "Evidence types supported"],
+              ["RF", "Random forest model"],
               ["3", "User roles"],
-              ["35+", "Active cases"],
+              ["Locked", "Protected endpoints"],
             ].map(([num, label]) => (
               <div key={label} className="text-center">
                 <div
@@ -301,7 +269,7 @@ function RolePortals() {
       color: "from-blue-600 to-blue-700",
       bg: "bg-blue-50 border-blue-100",
       iconBg: "bg-blue-100 text-blue-700",
-      features: ["Register new arrivals", "Review & verify evidence", "Update case status & score", "Assign partner referrals"],
+      features: ["Register new arrivals", "Review and verify evidence", "Issue refugee login credentials", "Assign partner referrals"],
       primary: { label: "Authority Login", to: "/login" },
       secondary: { label: "Open Dashboard", to: "/dashboard" },
     },
@@ -313,8 +281,8 @@ function RolePortals() {
       bg: "bg-emerald-50 border-emerald-100",
       iconBg: "bg-emerald-100 text-emerald-700",
       features: ["Track case progress", "View identity status", "Upload supporting documents", "Read official updates"],
-      primary: { label: "Track My Case", to: "/refugee" },
-      secondary: { label: "Refugee Portal", to: "/refugee" },
+      primary: { label: "Refugee Login", to: "/login?redirect=%2Frefugee" },
+      secondary: { label: "Open Refugee Portal", to: "/refugee" },
     },
     {
       icon: Building2,
@@ -334,8 +302,8 @@ function RolePortals() {
       color: "from-slate-600 to-slate-700",
       bg: "bg-slate-50 border-slate-200",
       iconBg: "bg-slate-100 text-slate-700",
-      features: ["Full platform overview", "Sample case walkthrough", "Evidence graph demo", "Scoring engine preview"],
-      primary: { label: "View Platform Overview", to: "/dashboard" },
+      features: ["Protected endpoint preview", "Sample case walkthrough", "Evidence graph demo", "Manual verification preview"],
+      primary: { label: "View Platform Overview", to: "/login?redirect=%2Fdashboard" },
       secondary: null,
     },
   ]
@@ -494,10 +462,10 @@ function IdentityConfidence() {
           titleComponent={
             <div className="mb-10">
               <h2 className="text-3xl font-black text-slate-900 sm:text-4xl">
-                Transparent identity confidence scoring
+                Explainable verification support
               </h2>
               <p className="mx-auto mt-3 max-w-xl text-slate-500">
-                Every decision is backed by visible evidence. Officers and refugees can both understand exactly why a score was given.
+                Every decision is backed by visible evidence, with a random forest pipeline instead of an LLM for lower cost, higher privacy, and clearer governance.
               </p>
             </div>
           }
@@ -543,7 +511,7 @@ function IdentityConfidence() {
               </div>
 
               <div className="space-y-6">
-                <h3 className="text-xl font-bold text-slate-900">Score bands & what they mean</h3>
+                <h3 className="text-xl font-bold text-slate-900">Manual review bands</h3>
                 <div className="space-y-3">
                   {SCORE_BANDS.map((b) => (
                     <div key={b.range} className={`flex items-center justify-between rounded-xl border px-5 py-4 ${b.color}`}>
@@ -572,7 +540,7 @@ function IdentityConfidence() {
                 </div>
 
                 <Link
-                  to="/scoring"
+                  to="/login?redirect=%2Fscoring"
                   className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 transition-colors hover:text-blue-800"
                 >
                   See evidence graph live <ArrowRight size={14} />
@@ -621,7 +589,7 @@ function TrustSection() {
   const pillars = [
     { icon: Lock, title: "Role-based access", desc: "Each user sees only what they are permitted to see. Officers, refugees, and partners have entirely separate workspaces." },
     { icon: ClipboardList, title: "Audit trail", desc: "Every case action, evidence decision, and score change is logged. Nothing is hidden." },
-    { icon: BarChart2, title: "Evidence transparency", desc: "Identity confidence is built from visible, categorised signals — not hidden assumptions or black-box models." },
+            { icon: BarChart2, title: "Random forest, not LLM", desc: "Verification support uses structured features and officer review, keeping costs lower and privacy tighter than an LLM-first flow." },
     { icon: UserCheck, title: "Refugee visibility", desc: "Individuals can view their case status, pending steps, and official communications at any time." },
   ]
   return (
@@ -653,7 +621,7 @@ function ModuleShowcase() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-black text-slate-900">Platform modules</h2>
-          <p className="mt-3 text-slate-500">Every module is functional and accessible from the platform today.</p>
+          <p className="mt-3 text-slate-500">Every module is live today, but the endpoints are protected and open only after login.</p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {MODULES.map((m) => (
@@ -718,9 +686,9 @@ function AccessSection() {
           {tab === "refugee" && (
             <div className="space-y-5">
               <h3 className="font-bold text-slate-900 text-lg">Refugee Case Access</h3>
-              <p className="text-sm text-slate-500">Track your case using your case ID or appointment code — no full account required.</p>
-              <Link to="/refugee" className="block text-center bg-emerald-600 text-white font-bold py-3 rounded-xl hover:bg-emerald-700 transition-colors">
-                Track My Case →
+              <p className="text-sm text-slate-500">Officer-issued login. Username is first 3 letters plus birth year, and the password includes the border office number and birth date.</p>
+              <Link to="/login?redirect=%2Frefugee" className="block text-center bg-emerald-600 text-white font-bold py-3 rounded-xl hover:bg-emerald-700 transition-colors">
+                Refugee Login →
               </Link>
               <div className="grid grid-cols-2 gap-3 pt-2">
                 {["View appointments", "Need translation help?"].map((a) => (
@@ -751,9 +719,9 @@ function AccessSection() {
 
 function QuickStrip() {
   const links = [
-    { label: "Track My Case", to: "/refugee", color: "text-emerald-700 bg-emerald-50 border-emerald-200" },
-    { label: "Submit Evidence", to: "/refugee", color: "text-blue-700 bg-blue-50 border-blue-200" },
-    { label: "View Appointments", to: "/refugee", color: "text-violet-700 bg-violet-50 border-violet-200" },
+    { label: "Track My Case", to: "/login?redirect=%2Frefugee", color: "text-emerald-700 bg-emerald-50 border-emerald-200" },
+    { label: "Submit Evidence", to: "/login?redirect=%2Frefugee", color: "text-blue-700 bg-blue-50 border-blue-200" },
+    { label: "View Appointments", to: "/login?redirect=%2Frefugee", color: "text-violet-700 bg-violet-50 border-violet-200" },
     { label: "Read Announcements", to: "/announcements", color: "text-amber-700 bg-amber-50 border-amber-200" },
     { label: "Authority Login", to: "/login", color: "text-slate-700 bg-slate-50 border-slate-200" },
     { label: "Partner Referrals", to: "/referrals", color: "text-purple-700 bg-purple-50 border-purple-200" },
@@ -786,7 +754,7 @@ function Footer() {
           </div>
 
           {[
-            { heading: "Platform", links: ["Dashboard", "Cases", "Evidence Review", "Scoring Engine", "Announcements", "Referrals"] },
+            { heading: "Platform", links: ["Dashboard", "Cases", "Evidence Review", "Manual Verification", "Announcements", "Referrals"] },
             { heading: "Access", links: ["Authority Login", "Track My Case", "Partner Login", "Demo Overview", "Request Access"] },
             { heading: "Information", links: ["About Beyond Borders", "How It Works", "Privacy & Data Use", "Accessibility", "Help Desk", "System Status"] },
           ].map((col) => (
@@ -804,17 +772,17 @@ function Footer() {
         {/* Demo credentials bar */}
         <div className="bg-slate-900 border border-slate-800 rounded-xl px-6 py-4 mb-8 flex flex-col sm:flex-row sm:items-center gap-3 justify-between">
           <div>
-            <div className="text-white font-bold text-sm mb-1">Demo Credentials</div>
-            <div className="text-xs text-slate-400">For judges, evaluators, and new team members:</div>
+            <div className="text-white font-bold text-sm mb-1">Sample Credentials</div>
+            <div className="text-xs text-slate-400">Authority: officer.portal / secureOfficer117. Refugee example: ahm1985 / ahm11719850315.</div>
           </div>
           <div className="flex flex-wrap gap-4 text-xs font-mono">
-            <div><span className="text-slate-500">Email:</span> <span className="text-blue-400">demo@beyondborders.org</span></div>
-            <div><span className="text-slate-500">Password:</span> <span className="text-blue-400">demo2025</span></div>
+            <div><span className="text-slate-500">Partner:</span> <span className="text-blue-400">partner.desk</span></div>
+            <div><span className="text-slate-500">Password:</span> <span className="text-blue-400">partnerAccess117</span></div>
           </div>
         </div>
 
         <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm">© 2025 Beyond Borders. Humanitarian hackathon project.</p>
+          <p className="text-sm">© 2026 Beyond Borders. Humanitarian identity platform demo.</p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="hover:text-white transition-colors">Privacy</a>
             <a href="#" className="hover:text-white transition-colors">Accessibility</a>
@@ -831,6 +799,7 @@ function Footer() {
 export function LandingPage() {
   // Ensure dark class is off (landing has its own light/dark sections)
   useEffect(() => {
+    document.documentElement.classList.remove("dark")
     document.body.classList.remove("dark")
     document.body.style.backgroundColor = ""
     return () => {}

@@ -1,0 +1,747 @@
+[
+  {
+    "id": "s1000000-0000-0000-0000-000000000001",
+    "case_id": "c1000000-0000-0000-0000-000000000001",
+    "predicted_score": 65.2,
+    "confidence_band": "verified",
+    "model_name": "seed-rule-v1",
+    "top_factors": [
+      {
+        "name": "Verified NGO record",
+        "impact": 15.0
+      },
+      {
+        "name": "Family confirmation (wife)",
+        "impact": 10.5
+      },
+      {
+        "name": "Employer confirmation",
+        "impact": 8.3
+      }
+    ],
+    "blocking_constraints": [],
+    "model_version": "seed-rule-v1",
+    "feature_snapshot": {
+      "total_evidence_count": 3,
+      "official_evidence_count": 1,
+      "corroborated_evidence_count": 2,
+      "self_declared_count": 0,
+      "accepted_official_count": 1,
+      "accepted_corroborated_count": 2,
+      "disputed_count": 0,
+      "rejected_count": 0,
+      "biometric_match_present": 0,
+      "government_record_present": 0,
+      "verified_ngo_record_present": 1,
+      "family_confirmation_present": 1,
+      "verified_family_links_count": 1,
+      "documents_verified_count": 0,
+      "documents_rejected_count": 0,
+      "external_confirmed_matches": 1,
+      "weighted_evidence_sum": 2.6,
+      "days_in_system": 2
+    },
+    "computed_at": "2026-03-13T08:55:00+00:00",
+    "created_at": "2026-03-13T08:55:00+00:00"
+  },
+  {
+    "id": "c76d00b6-a291-48fa-bde6-325fcc541801",
+    "case_id": "ec52062e-eb2c-4384-8691-bfa432bd830a",
+    "predicted_score": 1.8,
+    "confidence_band": "under_review",
+    "model_name": "rule-based-v1",
+    "top_factors": [],
+    "blocking_constraints": [
+      "No reviewed official evidence prevents verified status",
+      "Fewer than 2 evidence items submitted"
+    ],
+    "model_version": "rule-based-v1",
+    "feature_snapshot": {
+      "total_evidence_count": 1,
+      "official_evidence_count": 1,
+      "corroborated_evidence_count": 0,
+      "self_declared_count": 0,
+      "accepted_official_count": 0,
+      "accepted_corroborated_count": 0,
+      "disputed_count": 0,
+      "rejected_count": 0,
+      "biometric_match_present": 0,
+      "government_record_present": 0,
+      "verified_ngo_record_present": 0,
+      "family_confirmation_present": 0,
+      "verified_family_links_count": 0,
+      "documents_verified_count": 0,
+      "documents_rejected_count": 0,
+      "external_confirmed_matches": 0,
+      "weighted_evidence_sum": 0.2,
+      "days_in_system": 1
+    },
+    "computed_at": "2026-03-13T18:18:47.223523+00:00",
+    "created_at": "2026-03-13T18:18:47.223523+00:00"
+  },
+  {
+    "id": "601cf3c9-5234-490e-9284-277eb8ff6591",
+    "case_id": "e7902d9e-7eb9-4cd2-ae37-8b5135e33a66",
+    "predicted_score": 16.2,
+    "confidence_band": "under_review",
+    "model_name": "rule-based-v1",
+    "top_factors": [
+      {
+        "name": "Government record match",
+        "impact": 16.0
+      }
+    ],
+    "blocking_constraints": [
+      "No reviewed official evidence prevents verified status",
+      "Fewer than 2 evidence items submitted"
+    ],
+    "model_version": "rule-based-v1",
+    "feature_snapshot": {
+      "total_evidence_count": 1,
+      "official_evidence_count": 1,
+      "corroborated_evidence_count": 0,
+      "self_declared_count": 0,
+      "accepted_official_count": 0,
+      "accepted_corroborated_count": 0,
+      "disputed_count": 0,
+      "rejected_count": 0,
+      "biometric_match_present": 0,
+      "government_record_present": 1,
+      "verified_ngo_record_present": 0,
+      "family_confirmation_present": 0,
+      "verified_family_links_count": 0,
+      "documents_verified_count": 0,
+      "documents_rejected_count": 0,
+      "external_confirmed_matches": 0,
+      "weighted_evidence_sum": 0.9,
+      "days_in_system": 1
+    },
+    "computed_at": "2026-03-13T18:55:44.025609+00:00",
+    "created_at": "2026-03-13T18:55:44.025609+00:00"
+  },
+  {
+    "id": "54ee9a81-a6eb-4ed5-88e2-7bf1f805f9b3",
+    "case_id": "1290785c-1cbe-4a57-a244-2262d35905c8",
+    "predicted_score": 16.2,
+    "confidence_band": "under_review",
+    "top_factors": [
+      {
+        "name": "Government record match",
+        "impact": 16.0
+      }
+    ],
+    "blocking_constraints": [
+      "No reviewed official evidence prevents verified status",
+      "Fewer than 2 evidence items submitted"
+    ],
+    "model_version": "rule-based-v1",
+    "model_name": "rule-based-v1",
+    "feature_snapshot": {
+      "total_evidence_count": 1,
+      "official_evidence_count": 1,
+      "corroborated_evidence_count": 0,
+      "self_declared_count": 0,
+      "accepted_official_count": 0,
+      "accepted_corroborated_count": 0,
+      "disputed_count": 0,
+      "rejected_count": 0,
+      "biometric_match_present": 0,
+      "government_record_present": 1,
+      "verified_ngo_record_present": 0,
+      "family_confirmation_present": 0,
+      "verified_family_links_count": 0,
+      "documents_verified_count": 0,
+      "documents_rejected_count": 0,
+      "external_confirmed_matches": 0,
+      "weighted_evidence_sum": 0.9,
+      "days_in_system": 1
+    },
+    "computed_at": "2026-03-13T18:56:20.759211+00:00",
+    "created_at": "2026-03-13T18:56:20.759220+00:00"
+  },
+  {
+    "id": "a28ac7c0-9926-4c4b-8dc1-f2763dd668d9",
+    "case_id": "9c9e7cb1-7eb2-41c1-9ef4-e02e5152dd3c",
+    "predicted_score": 16.2,
+    "confidence_band": "under_review",
+    "top_factors": [
+      {
+        "name": "Government record match",
+        "impact": 16.0
+      }
+    ],
+    "blocking_constraints": [
+      "No reviewed official evidence prevents verified status",
+      "Fewer than 2 evidence items submitted"
+    ],
+    "model_version": "rule-based-v1",
+    "model_name": "rule-based-v1",
+    "feature_snapshot": {
+      "total_evidence_count": 1,
+      "official_evidence_count": 1,
+      "corroborated_evidence_count": 0,
+      "self_declared_count": 0,
+      "accepted_official_count": 0,
+      "accepted_corroborated_count": 0,
+      "disputed_count": 0,
+      "rejected_count": 0,
+      "biometric_match_present": 0,
+      "government_record_present": 1,
+      "verified_ngo_record_present": 0,
+      "family_confirmation_present": 0,
+      "verified_family_links_count": 0,
+      "documents_verified_count": 0,
+      "documents_rejected_count": 0,
+      "external_confirmed_matches": 0,
+      "weighted_evidence_sum": 0.9,
+      "days_in_system": 1
+    },
+    "computed_at": "2026-03-13T18:57:06.849802+00:00",
+    "created_at": "2026-03-13T18:57:06.849811+00:00"
+  },
+  {
+    "id": "d9bbcef7-a858-4607-bde7-0a05a5b1d8d1",
+    "case_id": "29709e71-607d-4e7c-8ade-3c92691fd0f9",
+    "predicted_score": 16.2,
+    "confidence_band": "under_review",
+    "top_factors": [
+      {
+        "name": "Government record match",
+        "impact": 16.0
+      }
+    ],
+    "blocking_constraints": [
+      "No reviewed official evidence prevents verified status",
+      "Fewer than 2 evidence items submitted"
+    ],
+    "model_version": "rule-based-v1",
+    "model_name": "rule-based-v1",
+    "feature_snapshot": {
+      "total_evidence_count": 1,
+      "official_evidence_count": 1,
+      "corroborated_evidence_count": 0,
+      "self_declared_count": 0,
+      "accepted_official_count": 0,
+      "accepted_corroborated_count": 0,
+      "disputed_count": 0,
+      "rejected_count": 0,
+      "biometric_match_present": 0,
+      "government_record_present": 1,
+      "verified_ngo_record_present": 0,
+      "family_confirmation_present": 0,
+      "verified_family_links_count": 0,
+      "documents_verified_count": 0,
+      "documents_rejected_count": 0,
+      "external_confirmed_matches": 0,
+      "weighted_evidence_sum": 0.9,
+      "days_in_system": 1
+    },
+    "computed_at": "2026-03-13T18:57:19.473689+00:00",
+    "created_at": "2026-03-13T18:57:19.473700+00:00"
+  },
+  {
+    "id": "928568b6-30f6-4697-883c-a117a5dd778d",
+    "case_id": "80a4923e-b20a-4288-aa4a-b80e404df590",
+    "predicted_score": 16.2,
+    "confidence_band": "under_review",
+    "top_factors": [
+      {
+        "name": "Government record match",
+        "impact": 16.0
+      }
+    ],
+    "blocking_constraints": [
+      "No reviewed official evidence prevents verified status",
+      "Fewer than 2 evidence items submitted"
+    ],
+    "model_version": "rule-based-v1",
+    "model_name": "rule-based-v1",
+    "feature_snapshot": {
+      "total_evidence_count": 1,
+      "official_evidence_count": 1,
+      "corroborated_evidence_count": 0,
+      "self_declared_count": 0,
+      "accepted_official_count": 0,
+      "accepted_corroborated_count": 0,
+      "disputed_count": 0,
+      "rejected_count": 0,
+      "biometric_match_present": 0,
+      "government_record_present": 1,
+      "verified_ngo_record_present": 0,
+      "family_confirmation_present": 0,
+      "verified_family_links_count": 0,
+      "documents_verified_count": 0,
+      "documents_rejected_count": 0,
+      "external_confirmed_matches": 0,
+      "weighted_evidence_sum": 0.9,
+      "days_in_system": 1
+    },
+    "computed_at": "2026-03-13T18:57:30.540817+00:00",
+    "created_at": "2026-03-13T18:57:30.540825+00:00"
+  },
+  {
+    "id": "1550085d-0400-4e69-8994-e43b9470e0d0",
+    "case_id": "8fec771c-b739-4a07-b1e4-9c6d10fa202d",
+    "predicted_score": 16.2,
+    "confidence_band": "under_review",
+    "top_factors": [
+      {
+        "name": "Government record match",
+        "impact": 16.0
+      }
+    ],
+    "blocking_constraints": [
+      "No reviewed official evidence prevents verified status",
+      "Fewer than 2 evidence items submitted"
+    ],
+    "model_version": "rule-based-v1",
+    "model_name": "rule-based-v1",
+    "feature_snapshot": {
+      "total_evidence_count": 1,
+      "official_evidence_count": 1,
+      "corroborated_evidence_count": 0,
+      "self_declared_count": 0,
+      "accepted_official_count": 0,
+      "accepted_corroborated_count": 0,
+      "disputed_count": 0,
+      "rejected_count": 0,
+      "biometric_match_present": 0,
+      "government_record_present": 1,
+      "verified_ngo_record_present": 0,
+      "family_confirmation_present": 0,
+      "verified_family_links_count": 0,
+      "documents_verified_count": 0,
+      "documents_rejected_count": 0,
+      "external_confirmed_matches": 0,
+      "weighted_evidence_sum": 0.9,
+      "days_in_system": 1
+    },
+    "computed_at": "2026-03-13T18:57:41.120358+00:00",
+    "created_at": "2026-03-13T18:57:41.120366+00:00"
+  },
+  {
+    "id": "f31dcdaf-f5e6-4815-b212-ae63f6b4a78b",
+    "case_id": "15463a2a-9e0e-4a61-8372-4bed7ea463b2",
+    "predicted_score": 16.2,
+    "confidence_band": "under_review",
+    "top_factors": [
+      {
+        "name": "Government record match",
+        "impact": 16.0
+      }
+    ],
+    "blocking_constraints": [
+      "No reviewed official evidence prevents verified status",
+      "Fewer than 2 evidence items submitted"
+    ],
+    "model_version": "rule-based-v1",
+    "model_name": "rule-based-v1",
+    "feature_snapshot": {
+      "total_evidence_count": 1,
+      "official_evidence_count": 1,
+      "corroborated_evidence_count": 0,
+      "self_declared_count": 0,
+      "accepted_official_count": 0,
+      "accepted_corroborated_count": 0,
+      "disputed_count": 0,
+      "rejected_count": 0,
+      "biometric_match_present": 0,
+      "government_record_present": 1,
+      "verified_ngo_record_present": 0,
+      "family_confirmation_present": 0,
+      "verified_family_links_count": 0,
+      "documents_verified_count": 0,
+      "documents_rejected_count": 0,
+      "external_confirmed_matches": 0,
+      "weighted_evidence_sum": 0.9,
+      "days_in_system": 1
+    },
+    "computed_at": "2026-03-13T18:57:51.699838+00:00",
+    "created_at": "2026-03-13T18:57:51.699846+00:00"
+  },
+  {
+    "id": "a98f26de-0c4b-4bb0-9ac1-8c71a9cc9be2",
+    "case_id": "0efe0b95-c36b-48d1-ab7f-2b5ee1772fb7",
+    "predicted_score": 16.2,
+    "confidence_band": "under_review",
+    "top_factors": [
+      {
+        "name": "Government record match",
+        "impact": 16.0
+      }
+    ],
+    "blocking_constraints": [
+      "No reviewed official evidence prevents verified status",
+      "Fewer than 2 evidence items submitted"
+    ],
+    "model_version": "rule-based-v1",
+    "model_name": "rule-based-v1",
+    "feature_snapshot": {
+      "total_evidence_count": 1,
+      "official_evidence_count": 1,
+      "corroborated_evidence_count": 0,
+      "self_declared_count": 0,
+      "accepted_official_count": 0,
+      "accepted_corroborated_count": 0,
+      "disputed_count": 0,
+      "rejected_count": 0,
+      "biometric_match_present": 0,
+      "government_record_present": 1,
+      "verified_ngo_record_present": 0,
+      "family_confirmation_present": 0,
+      "verified_family_links_count": 0,
+      "documents_verified_count": 0,
+      "documents_rejected_count": 0,
+      "external_confirmed_matches": 0,
+      "weighted_evidence_sum": 0.9,
+      "days_in_system": 1
+    },
+    "computed_at": "2026-03-13T18:59:06.037207+00:00",
+    "created_at": "2026-03-13T18:59:06.037214+00:00"
+  },
+  {
+    "id": "c2aaa18a-e0de-4422-9017-70be32883589",
+    "case_id": "919669cf-def8-4387-9097-2120ab85c43c",
+    "predicted_score": 16.2,
+    "confidence_band": "under_review",
+    "top_factors": [
+      {
+        "name": "Government record match",
+        "impact": 16.0
+      }
+    ],
+    "blocking_constraints": [
+      "No reviewed official evidence prevents verified status",
+      "Fewer than 2 evidence items submitted"
+    ],
+    "model_version": "rule-based-v1",
+    "model_name": "rule-based-v1",
+    "feature_snapshot": {
+      "total_evidence_count": 1,
+      "official_evidence_count": 1,
+      "corroborated_evidence_count": 0,
+      "self_declared_count": 0,
+      "accepted_official_count": 0,
+      "accepted_corroborated_count": 0,
+      "disputed_count": 0,
+      "rejected_count": 0,
+      "biometric_match_present": 0,
+      "government_record_present": 1,
+      "verified_ngo_record_present": 0,
+      "family_confirmation_present": 0,
+      "verified_family_links_count": 0,
+      "documents_verified_count": 0,
+      "documents_rejected_count": 0,
+      "external_confirmed_matches": 0,
+      "weighted_evidence_sum": 0.9,
+      "days_in_system": 1
+    },
+    "computed_at": "2026-03-13T18:59:29.413709+00:00",
+    "created_at": "2026-03-13T18:59:29.413717+00:00"
+  },
+  {
+    "id": "c89c0a05-8413-4ceb-a45b-d7b89a91191f",
+    "case_id": "5d8d4ef1-a231-4db0-aa56-59afa4ebef58",
+    "predicted_score": 16.2,
+    "confidence_band": "under_review",
+    "top_factors": [
+      {
+        "name": "Government record match",
+        "impact": 16.0
+      }
+    ],
+    "blocking_constraints": [
+      "No reviewed official evidence prevents verified status",
+      "Fewer than 2 evidence items submitted"
+    ],
+    "model_version": "rule-based-v1",
+    "model_name": "rule-based-v1",
+    "feature_snapshot": {
+      "total_evidence_count": 1,
+      "official_evidence_count": 1,
+      "corroborated_evidence_count": 0,
+      "self_declared_count": 0,
+      "accepted_official_count": 0,
+      "accepted_corroborated_count": 0,
+      "disputed_count": 0,
+      "rejected_count": 0,
+      "biometric_match_present": 0,
+      "government_record_present": 1,
+      "verified_ngo_record_present": 0,
+      "family_confirmation_present": 0,
+      "verified_family_links_count": 0,
+      "documents_verified_count": 0,
+      "documents_rejected_count": 0,
+      "external_confirmed_matches": 0,
+      "weighted_evidence_sum": 0.9,
+      "days_in_system": 1
+    },
+    "computed_at": "2026-03-13T19:03:16.960474+00:00",
+    "created_at": "2026-03-13T19:03:16.960482+00:00"
+  },
+  {
+    "id": "8ce383a3-07ca-46ba-866c-cbea72c10449",
+    "case_id": "6949c59e-5e1f-4275-9125-bd2b1016135c",
+    "predicted_score": 16.2,
+    "confidence_band": "under_review",
+    "top_factors": [
+      {
+        "name": "Government record match",
+        "impact": 16.0
+      }
+    ],
+    "blocking_constraints": [
+      "No reviewed official evidence prevents verified status",
+      "Fewer than 2 evidence items submitted"
+    ],
+    "model_version": "rule-based-v1",
+    "model_name": "rule-based-v1",
+    "feature_snapshot": {
+      "total_evidence_count": 1,
+      "official_evidence_count": 1,
+      "corroborated_evidence_count": 0,
+      "self_declared_count": 0,
+      "accepted_official_count": 0,
+      "accepted_corroborated_count": 0,
+      "disputed_count": 0,
+      "rejected_count": 0,
+      "biometric_match_present": 0,
+      "government_record_present": 1,
+      "verified_ngo_record_present": 0,
+      "family_confirmation_present": 0,
+      "verified_family_links_count": 0,
+      "documents_verified_count": 0,
+      "documents_rejected_count": 0,
+      "external_confirmed_matches": 0,
+      "weighted_evidence_sum": 0.9,
+      "days_in_system": 1
+    },
+    "computed_at": "2026-03-13T19:03:33.936582+00:00",
+    "created_at": "2026-03-13T19:03:33.936590+00:00"
+  },
+  {
+    "id": "52c87cff-95c0-4747-abce-1cf7d66927ab",
+    "case_id": "9e642c73-a304-400d-9b09-97a11605a602",
+    "predicted_score": 0.0,
+    "confidence_band": "under_review",
+    "top_factors": [],
+    "blocking_constraints": [
+      "No reviewed official evidence prevents verified status",
+      "Fewer than 2 evidence items submitted"
+    ],
+    "model_version": "rule-based-v1",
+    "model_name": "rule-based-v1",
+    "feature_snapshot": {
+      "total_evidence_count": 0,
+      "official_evidence_count": 0,
+      "corroborated_evidence_count": 0,
+      "self_declared_count": 0,
+      "accepted_official_count": 0,
+      "accepted_corroborated_count": 0,
+      "disputed_count": 0,
+      "rejected_count": 0,
+      "biometric_match_present": 0,
+      "government_record_present": 0,
+      "verified_ngo_record_present": 0,
+      "family_confirmation_present": 0,
+      "verified_family_links_count": 0,
+      "documents_verified_count": 0,
+      "documents_rejected_count": 0,
+      "external_confirmed_matches": 0,
+      "weighted_evidence_sum": 0,
+      "days_in_system": 1
+    },
+    "computed_at": "2026-03-13T19:08:48.516309+00:00",
+    "created_at": "2026-03-13T19:08:48.516319+00:00"
+  },
+  {
+    "id": "f89b2d57-2cf4-46b2-a164-20554a0a3b84",
+    "case_id": "a852d91f-2c13-4300-9034-1fdef89421e4",
+    "predicted_score": 26.2,
+    "confidence_band": "under_review",
+    "top_factors": [
+      {
+        "name": "Government record match",
+        "impact": 16.0
+      }
+    ],
+    "blocking_constraints": [
+      "Fewer than 2 evidence items submitted"
+    ],
+    "model_version": "rule-based-v1",
+    "model_name": "rule-based-v1",
+    "feature_snapshot": {
+      "total_evidence_count": 1,
+      "official_evidence_count": 1,
+      "corroborated_evidence_count": 0,
+      "self_declared_count": 0,
+      "accepted_official_count": 1,
+      "accepted_corroborated_count": 0,
+      "disputed_count": 0,
+      "rejected_count": 0,
+      "biometric_match_present": 0,
+      "government_record_present": 1,
+      "verified_ngo_record_present": 0,
+      "family_confirmation_present": 0,
+      "verified_family_links_count": 0,
+      "documents_verified_count": 0,
+      "documents_rejected_count": 0,
+      "external_confirmed_matches": 0,
+      "weighted_evidence_sum": 0.9,
+      "days_in_system": 1
+    },
+    "computed_at": "2026-03-13T19:08:48.753127+00:00",
+    "created_at": "2026-03-13T19:08:48.753139+00:00"
+  },
+  {
+    "id": "54c54192-d9f0-4801-85f4-14f8dbfee320",
+    "case_id": "39ffc578-a70d-4368-9d9b-8056b137094b",
+    "predicted_score": 26.2,
+    "confidence_band": "under_review",
+    "top_factors": [
+      {
+        "name": "Government record match",
+        "impact": 16.0
+      }
+    ],
+    "blocking_constraints": [
+      "Fewer than 2 evidence items submitted"
+    ],
+    "model_version": "rule-based-v1",
+    "model_name": "rule-based-v1",
+    "feature_snapshot": {
+      "total_evidence_count": 1,
+      "official_evidence_count": 1,
+      "corroborated_evidence_count": 0,
+      "self_declared_count": 0,
+      "accepted_official_count": 1,
+      "accepted_corroborated_count": 0,
+      "disputed_count": 0,
+      "rejected_count": 0,
+      "biometric_match_present": 0,
+      "government_record_present": 1,
+      "verified_ngo_record_present": 0,
+      "family_confirmation_present": 0,
+      "verified_family_links_count": 0,
+      "documents_verified_count": 0,
+      "documents_rejected_count": 0,
+      "external_confirmed_matches": 0,
+      "weighted_evidence_sum": 0.9,
+      "days_in_system": 1
+    },
+    "computed_at": "2026-03-13T19:09:25.466179+00:00",
+    "created_at": "2026-03-13T19:09:25.466188+00:00"
+  },
+  {
+    "id": "3a83d677-1168-4af5-9497-8a90e6a1098c",
+    "case_id": "3914f7d1-2631-4378-ac8e-99b86d3aed0b",
+    "predicted_score": 26.2,
+    "confidence_band": "under_review",
+    "top_factors": [
+      {
+        "name": "Government record match",
+        "impact": 16.0
+      }
+    ],
+    "blocking_constraints": [
+      "Fewer than 2 evidence items submitted"
+    ],
+    "model_version": "rule-based-v1",
+    "model_name": "rule-based-v1",
+    "feature_snapshot": {
+      "total_evidence_count": 1,
+      "official_evidence_count": 1,
+      "corroborated_evidence_count": 0,
+      "self_declared_count": 0,
+      "accepted_official_count": 1,
+      "accepted_corroborated_count": 0,
+      "disputed_count": 0,
+      "rejected_count": 0,
+      "biometric_match_present": 0,
+      "government_record_present": 1,
+      "verified_ngo_record_present": 0,
+      "family_confirmation_present": 0,
+      "verified_family_links_count": 0,
+      "documents_verified_count": 0,
+      "documents_rejected_count": 0,
+      "external_confirmed_matches": 0,
+      "weighted_evidence_sum": 0.9,
+      "days_in_system": 1
+    },
+    "computed_at": "2026-03-13T19:52:43.379019+00:00",
+    "created_at": "2026-03-13T19:52:43.379028+00:00"
+  },
+  {
+    "id": "b09d5ccb-8ad5-403c-8eec-5c432fe0052d",
+    "case_id": "edeb5bb5-e051-43aa-a8db-5d2b8d273a81",
+    "predicted_score": 26.2,
+    "confidence_band": "under_review",
+    "top_factors": [
+      {
+        "name": "Government record match",
+        "impact": 16.0
+      }
+    ],
+    "blocking_constraints": [
+      "Fewer than 2 evidence items submitted"
+    ],
+    "model_version": "rule-based-v1",
+    "model_name": "rule-based-v1",
+    "feature_snapshot": {
+      "total_evidence_count": 1,
+      "official_evidence_count": 1,
+      "corroborated_evidence_count": 0,
+      "self_declared_count": 0,
+      "accepted_official_count": 1,
+      "accepted_corroborated_count": 0,
+      "disputed_count": 0,
+      "rejected_count": 0,
+      "biometric_match_present": 0,
+      "government_record_present": 1,
+      "verified_ngo_record_present": 0,
+      "family_confirmation_present": 0,
+      "verified_family_links_count": 0,
+      "documents_verified_count": 0,
+      "documents_rejected_count": 0,
+      "external_confirmed_matches": 0,
+      "weighted_evidence_sum": 0.9,
+      "days_in_system": 1
+    },
+    "computed_at": "2026-03-13T21:06:09.565713+00:00",
+    "created_at": "2026-03-13T21:06:09.565721+00:00"
+  },
+  {
+    "id": "fffba5e9-93c4-4086-b8a9-c61cc3b8a526",
+    "case_id": "7403dbdb-70ba-4c82-b7aa-d2e4f3b6c8a1",
+    "predicted_score": 11.8,
+    "confidence_band": "under_review",
+    "top_factors": [],
+    "blocking_constraints": [
+      "Fewer than 2 evidence items submitted"
+    ],
+    "model_version": "rule-based-v1",
+    "model_name": "rule-based-v1",
+    "feature_snapshot": {
+      "total_evidence_count": 1,
+      "official_evidence_count": 1,
+      "corroborated_evidence_count": 0,
+      "self_declared_count": 0,
+      "accepted_official_count": 1,
+      "accepted_corroborated_count": 0,
+      "disputed_count": 0,
+      "rejected_count": 0,
+      "biometric_match_present": 0,
+      "government_record_present": 0,
+      "verified_ngo_record_present": 0,
+      "family_confirmation_present": 0,
+      "verified_family_links_count": 0,
+      "documents_verified_count": 0,
+      "documents_rejected_count": 0,
+      "external_confirmed_matches": 0,
+      "weighted_evidence_sum": 0.1,
+      "days_in_system": 1
+    },
+    "computed_at": "2026-03-13T21:44:36.382250+00:00",
+    "created_at": "2026-03-13T21:44:36.382264+00:00"
+  }
+]

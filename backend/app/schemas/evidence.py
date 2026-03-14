@@ -1,20 +1,39 @@
-"""Evidence schemas — with trust classes (official, corroborated, self_declared)."""
-from pydantic import BaseModel
-from typing import Optional
+# backend/app/schemas/evidence.py
+from pydantic import BaseModel, ConfigDict
+from enum import Enum
+from typing import Any, Optional
 
+class EvidenceClass(str, Enum):
+    OFFICIAL = "official"
+    CORROBORATED = "corroborated"
+    SELF_DECLARED = "self_declared"
 
-class EvidenceCreate(BaseModel):
-    evidence_type: str
-    trust_class: str = "self_declared"  # official | corroborated | self_declared
-    source: Optional[str] = None
-    details: Optional[dict] = None
+class EvidenceState(str, Enum):
+    PENDING = "pending" # pending_review in db schema context
+    ACCEPTED = "accepted"
+    REJECTED = "rejected"
+    DISPUTED = "disputed"
 
-
-class EvidenceOut(BaseModel):
-    id: str
+class EvidenceBase(BaseModel):
     case_id: str
+    person_id: str
+    evidence_class: EvidenceClass
     evidence_type: str
-    trust_class: str
-    source: Optional[str] = None
-    review_status: str = "pending"  # pending | accepted | rejected
-    created_at: Optional[str] = None
+    payload: dict[str, Any] = {}
+
+class EvidenceCreate(EvidenceBase):
+    pass
+
+class EvidenceReview(BaseModel):
+    state: EvidenceState
+
+class Evidence(EvidenceBase):
+    id: str
+    state: EvidenceState = EvidenceState.PENDING
+    source_actor_type: str
+    source_user_id: Optional[str] = None
+    submitted_at: str
+    reviewed_at: Optional[str] = None
+    reviewed_by: Optional[str] = None
+
+    model_config = ConfigDict(from_attributes=True)
