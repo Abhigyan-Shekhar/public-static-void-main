@@ -1,25 +1,17 @@
 services:
   - type: web
-    name: beyond-borders-api
-    runtime: python
+    name: borderbridge-api
+    env: python
     rootDir: backend
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
-    envVars:
-      - key: JWT_SECRET
-        generateValue: true
-      - key: CORS_ORIGINS
-        value: https://beyond-borders-web.onrender.com
+    healthCheckPath: /health
 
-  - type: web
-    name: beyond-borders-web
-    runtime: static
+  - type: static
+    name: borderbridge-web
     rootDir: frontend
     buildCommand: npm install && npm run build
-    staticPublishPath: dist
-    envVars:
-      - key: VITE_API_BASE_URL
-        value: https://beyond-borders-api.onrender.com
+    publishPath: dist
     routes:
       - type: rewrite
         source: /*
