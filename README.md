@@ -1,554 +1,201 @@
-# BeyondBorders
+# BorderBridge
 
-BeyondBorders is a full-stack case management and identity-confidence platform for displaced people. It combines a React frontend, a FastAPI backend, JSON seed data for local/demo mode, and database assets for a Supabase/Postgres-backed deployment.
+> **Rebuilding identity for displaced people — one verified signal at a time.**
 
-The project models how authorities, reviewers, case managers, partner organizations, and refugees can collaborate on identity reconstruction, evidence review, scoring, announcements, and referrals in a transparent workflow.
+BorderBridge is a humanitarian technology platform that helps border authorities manage refugee cases with transparency, speed, and dignity. It replaces fragmented paper-based processes with a unified system where identity is built incrementally through verifiable evidence — and where refugees have direct visibility into their own case.
 
-## What the project includes
+---
 
-- Authority-facing dashboards for intake, case review, scoring, announcements, and referrals
-- A refugee self-service portal for profile visibility, declarations, and case tracking
-- A FastAPI backend with route, service, and repository layers
-- Seeded demo data stored as JSON for local development
-- SQL schema, policies, functions, and seed scripts for database-backed deployment
-- An identity-confidence scoring engine with feature engineering plus RF/XGBoost training assets
+## The Problem
 
-## Product workflow
+When a refugee crosses a border without documents, the current system has no structured way to reconstruct their identity. Officers make inconsistent decisions, evidence is scattered across agencies, and the refugee has no voice in their own case.
 
-```text
-Arrival -> Intake -> Evidence Collection -> Review -> Score Recompute -> Case Decision -> Referral / Support
+BorderBridge solves this by:
+1. **Aggregating evidence** from biometrics, NGOs, education records, family connections, and employer references.
+2. **Scoring identity confidence** algorithmically so decisions are explainable and auditable.
+3. **Giving refugees agency** through a self-service portal where they can submit declarations and track their own case status.
+4. **Connecting verified people** to the right integration services — housing, employment, education — through partner NGOs.
+
+---
+
+## How It Works
+
+```
+Arrival → Identity Intake → Evidence Submission → Scoring → Verification → Integration
 ```
 
-Typical flow:
+1. An **intake officer** registers the individual and logs initial evidence.
+2. The **Identity Confidence Engine** scores the case from 0–100 based on verified signals.
+3. A **case officer** reviews evidence, accepts or rejects submissions, and progresses the case through status tiers.
+4. Once verified, the refugee is referred to **partner NGOs** for housing, employment, or education services.
+5. The **refugee** can track every step through their own self-service portal.
 
-1. An intake officer creates a case.
-2. Evidence is submitted by staff or self-declared by the refugee.
-3. Reviewers validate or reject evidence.
-4. The scoring engine computes an identity-confidence snapshot.
-5. Case managers decide next actions and create referrals.
-6. Authorities publish case-targeted or broad announcements.
-7. Refugees can view status, documents, profile details, and case timeline in the portal.
+---
 
-## Core capabilities
+## Identity Confidence Score
 
-### Authority interface
+Each piece of evidence contributes points toward a 0–100 confidence score:
 
-- Dashboard and summary views
-- Case registration
-- Case detail inspection
-- Evidence review
-- Score recomputation and score inspection
-- Referrals management
-- Announcement publishing
-- Visual case timeline
+| Score Range | Status |
+|---|---|
+| 0 – 39 | Under Review |
+| 40 – 59 | Provisional Identity |
+| 60 – 79 | Verified |
+| 80+ | High Confidence |
 
-### Refugee interface
+Evidence types are colour-coded and visualised in the **Identity Evidence Graph**:
+- 🔵 **Blue** — Biometric matches (UNHCR database)
+- 🟢 **Green** — Verified records (education, employment)
+- 🟠 **Orange** — Human validation (NGO officer sign-off)
+- 🟣 **Purple** — Social relationships (family links)
 
-- Personal case overview
-- Profile card and activity feed
-- Self-declared information flows
-- Announcements visibility
-- Evidence and document awareness
+Clicking an unverified node in the graph triggers an animated score update so officers can see the impact of each evidence item in real time.
 
-### Backend domain areas
+---
 
-- Cases
-- Evidence
-- Documents
-- Family links
-- Announcements
-- Referrals
-- Scoring
-- Audit logs
+## Tech Stack
 
-## Tech stack
+| Layer | Technology |
+|---|---|
+| Frontend | React 18 + TypeScript + Tailwind CSS + shadcn/ui |
+| Backend | FastAPI (Python) |
+| Database | Supabase (PostgreSQL) |
+| Scoring Engine | Random Forest / XGBoost |
+| Graph Visualisation | Custom SVG + React (radial hub-and-spoke) |
+
+---
+
+## Frontend Pages
+
+All pages are live with `npm run dev` in the `frontend/` directory.
+
+### Authority Interface (`/dashboard` and sub-pages)
+
+| Route | Page | Description |
+|---|---|---|
+| `/` | **Animated Login** | Character-animated sign in / sign up with email + phone validation |
+| `/dashboard` | **Authority Dashboard** | Live metrics (35 active cases, 12 evidence pending, 4 high priority), alerts, and announcements |
+| `/cases` | **Cases Database** | Sortable case table with identity score, status, origin country, and quick-action links |
+| `/case/:id` | **Case Details** | Full profile view: identity fields, family links, evidence log, officer notes |
+| `/registration` | **Client Registration** | Split-pane intake form to register a new arrival into the system |
+| `/evidence` | **Evidence Review** | Document queue where reviewers approve or reject submitted evidence |
+| `/scoring` | **Identity Confidence Engine** | Interactive radial evidence graph with animated score + colour-coded node types |
+| `/announcements` | **Announcements Board** | Targeted broadcast system for camp-wide or group-specific updates |
+| `/referrals` | **Partner Referrals** | Match verified refugees to NGO integration services (housing, employment, education) |
+| `/timeline` | **Visual Case Timeline** | Milestone tracker mapping the journey from Arrival → Evidence → Verification → Integration |
+
+### Refugee Interface (`/refugee`)
+
+| Tab | Description |
+|---|---|
+| **My Case** | Live case status bar, current phase, and pending actions |
+| **Profile** | Social-style identity profile with avatar, bio, metrics ribbon (days in system, verified docs, family links), and a scrollable case activity feed |
+| **Family** | Declared and verified family connections |
+| **Evidence & Docs** | Upload self-declared documents for officer review |
+| **Appointments** | Scheduled interviews and check-in dates |
+| **Messages** | One-way notifications and announcements from authorities |
+
+---
+
+## System Roles
+
+### Authority (Immigration Officials)
+- `intake_officer` — Registers arrivals, logs initial evidence
+- `reviewer` — Validates evidence, updates trust classification
+- `case_manager` — Full case oversight, triggers score recomputation, manages referrals
+- `communications_publisher` — Broadcasts announcements to refugee groups
+
+### Refugee (Displaced Persons)
+- **Can**: Submit declarations, view their case status, read announcements
+- **Cannot**: Directly verify themselves or overwrite accepted official data
+- All refugee submissions enter as `self_declared` and require a `reviewer` before they affect the score
+
+### Partner (NGOs & Aid Agencies)
+- `partner_service_officer` — Manages referrals assigned to their agency, posts service announcements
+
+---
+
+## Quick Start
 
 ### Frontend
-
-- React 19
-- TypeScript
-- Vite
-- Tailwind CSS v4
-- Radix UI primitives
-- Framer Motion
-- Cytoscape
-- React Router
-
-### Backend
-
-- FastAPI
-- Pydantic v2
-- Uvicorn
-- Python 3
-- Scikit-learn
-- XGBoost
-- Pandas
-- NumPy
-
-### Data layer
-
-- JSON seed-backed repositories for local/demo mode
-- SQL schema and seed files for Supabase/Postgres deployment
-
-## Repository layout
-
-```text
-.
-├── backend/
-│   ├── app/
-│   │   ├── api/
-│   │   ├── core/
-│   │   ├── ml/
-│   │   ├── repositories/
-│   │   ├── schemas/
-│   │   └── services/
-│   ├── data/
-│   ├── tests/
-│   ├── requirements.txt
-│   └── pytest.ini
-├── data/
-│   └── seed/
-├── db/
-│   ├── docs/
-│   ├── functions.sql
-│   ├── policies.sql
-│   ├── schema.sql
-│   └── seed.sql
-├── docs/
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   ├── package.json
-│   └── vite.config.ts
-├── notebooks/
-├── docker-compose.yml
-└── README.md
-```
-
-## Frontend pages
-
-### Main frontend surfaces
-
-- `/` animated login/landing entry
-- `/dashboard` authority dashboard
-- `/cases` authority case list
-- `/case/:id` authority case detail
-- `/registration` client registration
-- `/evidence` evidence review
-- `/scoring` scoring and evidence graph
-- `/announcements` announcements management
-- `/referrals` partner/authority referrals view
-- `/timeline` case timeline view
-- `/refugee` refugee portal
-
-### Notable UI components
-
-- Authority dashboard and collapsible sidebar
-- Case detail with score, blockers, and linked evidence
-- Refugee portal with profile banner and activity feed
-- Announcement creation and listing
-- Referral creation and updates
-- Registration intake experience
-- Evidence graph and review workflows
-
-## Backend API overview
-
-The backend app entrypoint is:
-
-```bash
-backend/app/main.py
-```
-
-Important route groups:
-
-- `/health`
-- `/cases`
-- `/cases/{case_id}/timeline`
-- `/cases/{case_id}/evidence`
-- `/evidence/{evidence_id}/review`
-- `/cases/{case_id}/documents/register`
-- `/documents/{document_id}/review`
-- `/cases/{case_id}/family-links`
-- `/family-links/{link_id}`
-- `/announcements`
-- `/cases/{case_id}/announcements`
-- `/cases/{case_id}/referrals`
-- `/referrals/{referral_id}`
-- `/cases/{case_id}/score/latest`
-- `/cases/{case_id}/score/recompute`
-
-## Demo authentication model
-
-Local development uses a demo user header instead of a full production auth flow for most API interactions.
-
-The frontend API client sends:
-
-```text
-X-Demo-Username: auth_manager
-```
-
-Demo users currently defined in the backend include:
-
-- `auth_intake`
-- `auth_reviewer`
-- `auth_manager`
-- `auth_publisher`
-- `partner_user`
-- `refugee_user`
-
-These users map to roles and permissions such as:
-
-- `intake_officer`
-- `reviewer`
-- `case_manager`
-- `communications_publisher`
-- `partner_service_officer`
-- `read_only_self_service`
-
-## Local setup
-
-### Prerequisites
-
-- Node.js 20+ recommended
-- npm
-- Python 3.11+ recommended
-- pip
-- Git
-
-Optional:
-
-- Docker / Docker Compose
-- Supabase project for database-backed mode
-
-## Quick start
-
-### 1. Clone the repository
-
-```bash
-git clone <your-repo-url>
-cd public-static-void-main
-```
-
-### 2. Install frontend dependencies
-
 ```bash
 cd frontend
 npm install
-cd ..
-```
-
-### 3. Install backend dependencies
-
-```bash
-cd backend
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-cd ..
-```
-
-### 4. Start the backend
-
-```bash
-cd backend
-source .venv/bin/activate
-uvicorn app.main:app --reload
-```
-
-Backend URLs:
-
-- API: [http://127.0.0.1:8000](http://127.0.0.1:8000)
-- Swagger docs: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-- ReDoc: [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
-
-### 5. Start the frontend
-
-In a separate terminal:
-
-```bash
-cd frontend
 npm run dev
 ```
-
-Frontend URL:
-
-- App: [http://127.0.0.1:5173](http://127.0.0.1:5173)
-
-## Running with Docker
-
-There is a `docker-compose.yml` for the API service:
-
-```bash
-docker compose up --build
-```
-
-This starts the FastAPI app on port `8000`.
-
-## Render deployment
-
-This repository now includes a root [render.yaml](C:/Users/Swastik/Desktop/public-static-void-main/render.yaml) for deploying:
-
-- a Python backend service from `backend/`
-- a static frontend site from `frontend/`
-
-### What is already wired
-
-- The frontend reads its API base URL from `VITE_API_BASE_URL`
-- The backend reads `CORS_ORIGINS` from environment configuration
-- The backend JWT secret can be provided by Render through `JWT_SECRET`
-- The static frontend includes an SPA rewrite so React Router routes work on refresh
-
-### Deploy steps
-
-1. Push this repository to GitHub.
-2. In Render, choose `New +` -> `Blueprint`.
-3. Connect the GitHub repository.
-4. Select the repo and let Render read `render.yaml`.
-5. Create the services.
-
-Render will provision:
-
-- `beyond-borders-api`
-- `beyond-borders-web`
-
-### Important after creating services
-
-If you rename either Render service, update the URLs in [render.yaml](C:/Users/Swastik/Desktop/public-static-void-main/render.yaml):
-
-- `CORS_ORIGINS` on the API service
-- `VITE_API_BASE_URL` on the frontend service
-
-### Expected public URLs
-
-After deployment, you will access the app through a public Render URL such as:
-
-- `https://beyond-borders-web.onrender.com`
-
-And the frontend will call the backend at:
-
-- `https://beyond-borders-api.onrender.com`
-
-## Database setup
-
-The project contains SQL assets under `db/`.
-
-Important files:
-
-- `db/schema.sql`
-- `db/seed.sql`
-- `db/functions.sql`
-- `db/policies.sql`
-- `db/docs/data-model.md`
-- `db/docs/sample-cases.md`
-
-### Suggested database bootstrap
-
-1. Create a Supabase project.
-2. Run `db/schema.sql`.
-3. Run `db/functions.sql`.
-4. Run `db/policies.sql`.
-5. Run `db/seed.sql`.
-
-If you are developing locally without Supabase, the backend can still operate against JSON seed files under `data/seed/`.
-
-## Seed/demo data
-
-JSON seed data lives in:
-
-- `data/seed/cases.json`
-- `data/seed/evidence_items.json`
-- `data/seed/documents.json`
-- `data/seed/family_links.json`
-- `data/seed/announcements.json`
-- `data/seed/referrals.json`
-- `data/seed/score_snapshots.json`
-- `data/seed/audit_logs.json`
-- `data/seed/persons.json`
-- `data/seed/profiles.json`
-
-These files power the local demo repository implementation and are also useful for understanding expected data shapes.
-
-## ML / scoring assets
-
-The ML-related code lives in `backend/app/ml/`.
-
-Important files:
-
-- `feature_builder.py`
-- `infer.py`
-- `evaluate.py`
-- `train_rf.py`
-- `train_xgb.py`
-- `generate_synthetic_data.py`
-
-Model artifacts are stored in:
-
-- `backend/app/ml/models/`
-
-Synthetic training data lives in:
-
-- `backend/app/ml/data/synthetic_identity_scores.csv`
-
-Notebook experiments:
-
-- `notebooks/scoring_experiments.ipynb`
-
-## How scoring works
-
-The score pipeline combines structured features such as:
-
-- total evidence count
-- official vs corroborated vs self-declared evidence
-- accepted/rejected/disputed review state
-- verified family links
-- verified/rejected documents
-- external confirmed matches
-- weighted evidence sum
-- days in system
-
-The API exposes:
-
-- latest score lookup
-- recompute score for a case
-
-Score snapshots include:
-
-- `predicted_score`
-- `confidence_band`
-- `top_factors`
-- `blocking_constraints`
-- `feature_snapshot`
-- `model_name`
-- `model_version`
-
-## Environment and configuration
-
-There is no committed root `.env.example` in the repository at the moment, so if you enable Supabase-backed or environment-driven configuration you should create your own `.env` based on the fields referenced by the backend config layer.
-
-If you plan to add environment-backed deployment, review:
-
-- `backend/app/core/config.py`
-- `backend/app/core/security.py`
-- `backend/app/repositories/supabase_client.py`
-
-## Development workflows
-
-### Frontend
-
-Run dev server:
-
-```bash
-cd frontend
-npm run dev
-```
-
-Create a production build:
-
-```bash
-cd frontend
-npm run build
-```
-
-Preview the build:
-
-```bash
-cd frontend
-npm run preview
-```
-
-Lint:
-
-```bash
-cd frontend
-npm run lint
-```
+Open `http://localhost:5173` in your browser.
 
 ### Backend
-
-Run API:
-
 ```bash
 cd backend
-source .venv/bin/activate
+pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
+API at `http://127.0.0.1:8000` · Docs at `http://127.0.0.1:8000/docs`
 
-Run the main backend test suite:
+### Database
+1. Create a Supabase project
+2. Run `db/schema.sql` in the Supabase SQL editor
+3. Run `db/seed.sql` to populate demo data
+4. Copy your credentials into `.env`
 
+### Environment Variables
 ```bash
-cd backend
-source .venv/bin/activate
-pytest
+cp .env.example .env
+# Fill in SUPABASE_URL, SUPABASE_ANON_KEY, and any other required values
 ```
 
-Run the standalone regression file:
+## Deploy On Render
+
+This repo is set up for a two-service Render deploy using [`render.yaml`](./render.yaml):
+
+- `borderbridge-api` → FastAPI web service from `backend/`
+- `borderbridge-web` → Vite static site from `frontend/`
+
+### 1. Create the services
+
+1. Push this repo to GitHub.
+2. In Render, create a new Blueprint deployment from the repo.
+3. Render will detect `render.yaml` and provision both services.
+
+### 2. Configure backend environment variables
+
+Set these on the `borderbridge-api` service:
 
 ```bash
-cd backend
-source .venv/bin/activate
-pytest test_refs.py
+SUPABASE_URL=...
+SUPABASE_KEY=...
+SUPABASE_SERVICE_KEY=...
+JWT_SECRET=...
+JWT_ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=60
+APP_ENV=production
+CORS_ORIGINS=https://<your-frontend-domain>.onrender.com
 ```
 
-## Testing status
+If you later add a custom frontend domain, include that domain in `CORS_ORIGINS` as a comma-separated value.
 
-At the time of this README update, the project was verified with:
+### 3. Verify the deploy
 
-```bash
-cd backend && pytest
-cd backend && pytest test_refs.py
-cd frontend && npm run build
+- Backend health check: `/health`
+- Backend docs: `/docs`
+- Frontend routes such as `/dashboard`, `/cases`, and `/refugee` are rewritten to `index.html` so client-side routing works on Render.
+
+---
+
+## Team
+
+| Person | Area | Branch |
+|---|---|---|
+| Person 1 | Authority dashboard + case detail UI | `feature/frontend-authority` |
+| Person 2 | Refugee portal + partner dashboard UI | `feature/frontend-refugee-partner` |
+| Person 3 | FastAPI backend + API integration | `feature/backend-api` |
+| Person 4 | Database schema + ML scoring | `feature/data-ml` |
+
+## Branch Model
 ```
-
-## Important docs
-
-Project docs:
-
-- `docs/architecture.md`
-- `docs/api-contract.md`
-- `docs/feature-scope.md`
-- `docs/demo-script.md`
-- `docs/judge-qa.md`
-- `Context.md`
-
-Database docs:
-
-- `db/docs/data-model.md`
-- `db/docs/sample-cases.md`
-
-## Current implementation notes
-
-- The frontend is wired to the FastAPI backend through `frontend/src/lib/api.ts`.
-- Local/demo mode primarily uses JSON-backed repositories.
-- The frontend production build currently succeeds with a Vite chunk-size warning; that warning does not block the build.
-- The repository includes generated frontend build output in `frontend/dist/`, which you may or may not want to keep under version control depending on your deployment flow.
-
-## Recommended startup order
-
-For local development:
-
-1. Start the backend on port `8000`
-2. Start the frontend on port `5173`
-3. Open the frontend in a browser
-4. Use the built-in demo auth header behavior from the frontend API client
-
-## If you are handing this to another developer
-
-The fastest way for a new developer to get running is:
-
-```bash
-git clone <repo>
-cd public-static-void-main
-cd backend && python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
-cd ../frontend && npm install
-cd ../backend && source .venv/bin/activate && uvicorn app.main:app --reload
-cd ../frontend && npm run dev
+main    → demo-safe only
+dev     → integration branch
+feature/* → individual work
 ```
-
-Then open:
-
-- [http://127.0.0.1:5173](http://127.0.0.1:5173)
-- [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-
-## License / ownership
-
-Add your preferred license and repository ownership details here before publishing publicly if this is going to be used beyond demo or coursework purposes.
+Only the integrator merges `dev → main`.
