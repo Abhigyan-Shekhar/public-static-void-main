@@ -1,6 +1,31 @@
-import { getSession, type AuthSession, type UserRole } from "./auth";
+import { clearSession, getSession, type AuthSession, type UserRole } from "./auth";
 
-const BASE_URL = (import.meta.env.VITE_API_BASE_URL as string | undefined)?.replace(/\/$/, "") || "http://127.0.0.1:8000";
+function normalizeBaseUrl(raw: string | undefined) {
+  if (!raw) {
+    return "http://127.0.0.1:8000";
+  }
+
+  let value = raw.trim();
+
+  // Accept accidental JSON-array formatting from deploy dashboards.
+  if (value.startsWith("[") && value.endsWith("]")) {
+    try {
+      const parsed = JSON.parse(value);
+      if (Array.isArray(parsed) && typeof parsed[0] === "string") {
+        value = parsed[0];
+      }
+    } catch {
+      // Fall through and let URL parsing surface a clearer runtime error.
+    }
+  }
+
+  // Accept accidental quoted string formatting.
+  value = value.replace(/^['"]|['"]$/g, "");
+
+  return value.replace(/\/$/, "");
+}
+
+const BASE_URL = normalizeBaseUrl(import.meta.env.VITE_API_BASE_URL as string | undefined);
 const DEFAULT_USER = "auth_manager";
 const DEMO_USER_BY_ROLE: Record<UserRole, string> = {
   authority: "auth_manager",
@@ -40,14 +65,33 @@ async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
   headers.set("X-Demo-Username", demoUsername);
 
   if (session?.accessToken) {
-    headers.set("Authorization", `Bearer ${session.accessToken}`);
+    try {
+      headers.set("Authorization", `Bearer ${session.accessToken}`);
+    } catch {
+      // Recover from a corrupted local session instead of blocking all requests.
+      clearSession();
+    }
   }
 
-  const requestUrl = `${BASE_URL}${path}`;
-  let res = await fetch(requestUrl, {
-    ...options,
-    headers,
-  });
+  let requestUrl: string;
+  try {
+    requestUrl = new URL(path, `${BASE_URL}/`).toString();
+  } catch {
+    throw new Error(`Invalid API base URL: ${BASE_URL}`);
+  }
+
+  let res: Response;
+  try {
+    res = await fetch(requestUrl, {
+      ...options,
+      headers,
+    });
+  } catch (error) {
+    if (error instanceof Error) {
+      throw error;
+    }
+    throw new Error("Network request failed.");
+  }
 
   // Local demo flow: if a stored bearer token is stale, retry once with the
   // role-based demo header so the workspace does not get stuck on 401.
